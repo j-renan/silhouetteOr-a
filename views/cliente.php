@@ -11,7 +11,7 @@
 <body>
     <!--barra de navegação-->
     <nav class="navbar navbar-default">
-  <div class="container-fluid">    
+  <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -24,19 +24,19 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Clientes <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Produtos</a></li>  
-        <li><a href="#">Orçamentos</a></li>      
+        <li><a href="#">Produtos</a></li>
+        <li><a href="#">Orçamentos</a></li>
       </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
+    </div>
+  </div>
 </nav>
 
 
 
 
     <!--incluindo arquivos necessarios para a biblioteca-->
-    <script src="../assets/js/jquery.min.js"></script>    
+    <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
-    
+
 </body>
 </html>
