@@ -31,6 +31,47 @@
       </div>
   </nav>
 
+  <div class="container">
+  <form action="">
+  <!--linha um id, nome-->
+    <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>ID</label>
+            <imput type="text" class="form-control" name="id" readonly/> 
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="form-group">
+            <label>Nome</label>
+            <input type="text" class="form-control" name="nome"/>
+          </div>
+        </div>
+    </div>
+
+    <!--linha um id, nome-->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9"></div>
+    </div>
+
+    <!--linha um id, nome-->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9"></div>
+    </div>
+
+    <!--linha um id, nome-->
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9"></div>
+    </div>
+    </form>
+  
+  
+  
+  </div>
+
 
 
 
