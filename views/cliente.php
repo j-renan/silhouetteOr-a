@@ -54,7 +54,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label>CPF</label>
-            <input type="text" class="form-control" name="cpf"/>
+            <input type="text" class="form-control cpf" name="cpf"/>
           </div>
         </div>
         <div class="col-md-9">
@@ -101,6 +101,15 @@
     <!--incluindo arquivos necessarios para a biblioteca-->
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/jquery.mask.js"></script>
 
+    <script>
+      $(document).ready(aplicarMascaras);
+
+      function aplicarMascaras() {
+        $('.cpf').mask('000.000.000-00');        
+      }
+
+    </script>
 </body>
 </html>
