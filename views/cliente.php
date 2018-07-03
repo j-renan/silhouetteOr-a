@@ -9,27 +9,8 @@
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <!--barra de navegação-->
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Silhouette Orça</a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Clientes <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">Produtos</a></li>
-            <li><a href="#">Orçamentos</a></li>
-          </ul>
-        </div>
-      </div>
-  </nav>
+  <!--barra de navegação-->
+  <?php include './header.php';?>
 
   <div class="container">
   <h1>Cadastro de Clientes</h1>
@@ -41,7 +22,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label>ID</label>
-            <input type="text" class="form-control" name="id" readonly/> 
+            <input type="text" class="form-control" name="id" readonly/>
           </div>
         </div>
         <div class="col-md-9">
@@ -57,7 +38,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label>Data de Nascimento</label>
-            <input type="date" class="form-control" name="data-nascimento"/> 
+            <input type="date" class="form-control" name="data-nascimento"/>
           </div>
         </div>
         <div class="col-md-9">
@@ -73,7 +54,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label>CPF</label>
-            <input type="text" class="form-control" name="cpf"/> 
+            <input type="text" class="form-control" name="cpf"/>
           </div>
         </div>
         <div class="col-md-9">
@@ -106,7 +87,7 @@
         <button type="submit" class="btn btn-primary">
           SALVAR <span class="glyphicon glyphicon-plus-sign"></span>
         </button>
-      </div>  
+      </div>
       <div class="col-md-2">
         <button type="reset" class="btn btn-info">
           LIMPAR <span class="glyphicon glyphicon-erase"></span>
@@ -114,13 +95,8 @@
       </div>
     </div>
     </form>
-  
-  
-  
+
   </div>
-
-
-
 
     <!--incluindo arquivos necessarios para a biblioteca-->
     <script src="../assets/js/jquery.min.js"></script>
