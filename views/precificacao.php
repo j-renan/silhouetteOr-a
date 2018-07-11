@@ -21,14 +21,32 @@
     <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label>Selecione Produto</label>                
-            <input type="text" class="form-control" name="sel-produto"/>
+            <h3>Produto a Precificar</h3> 
+              <br/>
+              <select class="form-control">
+                <option>Selecione o Produto</option>
+              </select>
           </div>
-        </div>
-        <div class="col-md-6">
+        </div>    
+    </div>
+<br/>
+    <div class="row">
+      <div class="col-md-6">
           <div class="form-group">
-            <label>Materiais a Utilizar</label>
-            <input type="text" class="form-control" name="mat-utilizar"/>
+            <h3>Materiais a Utilizar</h3>
+              <br/>
+              <label>Material</label>
+            <select class="form-control">
+              <option>Selecione o Material</option>
+            </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+          <div class="form-group">
+              <h3>Materiais a Utilizar</h3>
+              <br/>
+            <label>Preço unitário R$</label>
+            <input type="text" class="form-control" name="id" readonly/>
           </div>
         </div>
     </div>
@@ -39,7 +57,7 @@
     <div class="row">
       <div class="col-md-2">
         <button type="submit" class="btn btn-primary">
-          ENVIAR PARA ORÇAMENTO <span class="glyphicon glyphicon-plus-sign"></span>
+          CALCULAR PRODUTO <span class="glyphicon glyphicon-usd"></span>
         </button>
       </div>      
     </div>
