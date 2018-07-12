@@ -22,7 +22,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Pruduto</label>
-            <input type="text" class="form-control" name="produto"/>
+            <input type="text" class="form-control" name="produto" required/>
           </div>
         </div>
         <div class="col-md-6">
