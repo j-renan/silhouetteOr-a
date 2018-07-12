@@ -16,7 +16,7 @@
   <h1>Cadastro de Produto</h1>
   <hr/>
   <br/>
-  <form action="">
+  <form action="../controller/produto-ctrl.php" method="post">
   <!--linha um nome, preço unitario-->
     <div class="row">
         <div class="col-md-6">
@@ -24,10 +24,16 @@
             <label>Pruduto</label>
             <input type="text" class="form-control" name="produto"/>
           </div>
+        </div>
+        <div class="col-md-6">
+          <div class="checkbox">
+            </br>
+            <label>
+              <input type="checkbox" name="ativo" value="true" checked> Ativo
+            </label>
+          </div>  
         </div>       
-    </div>
-
-    
+    </div> 
 
     <!--adicionando botoes-->
     <div class="row">
@@ -49,15 +55,6 @@
     <!--incluindo arquivos necessarios para a biblioteca-->
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/jquery.mask.js"></script>
-
-    <script>
-      $(document).ready(aplicarMascaras);
-
-      function aplicarMascaras() {
-        $('.cpf').mask('000.000.000-00');        
-      }
-
-    </script>
-</body>
+    
+    </body>
 </html>
