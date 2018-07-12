@@ -4,7 +4,10 @@ class Produto {
     private $produto;
     private $ativo;
 
-    public function Produto(){}
+    public function Produto($produto, $ativo){
+        $this->produto = $produto;
+        $this->ativo = $ativo;
+    }
 
     public function setId($id){
         $this->id =$id;

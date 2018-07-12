@@ -11,10 +11,14 @@ if (isset($_POST["ativo"])) {
 }
 
 // criar um produto
-$produto = new Produto();
-$produto->setProduto = $produto_nome;
-$produto->setAtivo = $ativo;
+$produto = new Produto($produto_nome, $ativo);
 
-echo "PRODUTO ".$produto;
+// passar produto para dao inserir no banco de dados
+
+// retornar para página de produtos com mensagem de sucesso no cadastro
+
+// colocar a tabela com os produtos cadastrados
+
+
 
 
