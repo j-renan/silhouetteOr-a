@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label>Pruduto</label>
+            <label>Produto</label>
             <input type="text" class="form-control" name="produto" required/>
           </div>
         </div>
@@ -49,6 +49,12 @@
       </div>
     </div>
     </form>
+    <br/>
+    <!-- mensagem de cadastro de produto 
+    <div class="alert alert-success" role="alert">Produto cadastrado com sucesso!</div> -->
+
+    <br/>
+    <?php include './produto-tabela.php';?>
 
   </div>
 

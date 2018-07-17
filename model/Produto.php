@@ -4,16 +4,16 @@ class Produto {
     private $produto;
     private $ativo;
 
-    public function Produto($produto, $ativo){
+    public function Produto($produto, $ativo) {     
         $this->produto = $produto;
-        $this->ativo = $ativo;
+        $this->ativo = $ativo;        
     }
 
-    public function setId($id){
+    public function setId($id) {
         $this->id =$id;
     }
 
-    public function getId(){
+    public function getId() {
         return $this->id;
     }
 
