@@ -10,7 +10,11 @@
 </head>
 <body>
   <!--barra de navegação-->
-  <?php include './header.php';?>
+  <?php 
+    include './header.php';
+    include '../helper/Helper.php';
+    echo "Produto cadastrado = ". $produtoCadastrado;
+  ?>
 
 <div class="container">
   <h1>Cadastro de Produto</h1>
@@ -50,10 +54,11 @@
     </div>
     </form>
     <br/>
-    <!-- mensagem de cadastro de produto 
-    <div class="alert alert-success" role="alert">Produto cadastrado com sucesso!</div> -->
 
-    <br/>
+    <!-- mensagem de cadastro de produto-->
+    <div class="alert alert-success" role="alert">Produto cadastrado com sucesso!</div> 
+
+  <br/>
     <?php include './produto-tabela.php';?>
 
   </div>

@@ -2,7 +2,7 @@
 class Produto {
     private $id;
     private $produto;
-    private $ativo;
+    private $ativo;   
 
     public function Produto($produto, $ativo) {     
         $this->produto = $produto;
@@ -32,6 +32,7 @@ class Produto {
     public function getAtivo() {
         return $this->ativo;
     }
+    
 }
 
 

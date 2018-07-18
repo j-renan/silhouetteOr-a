@@ -8,14 +8,21 @@ class ProdutoDAO {
        
         $sql = "INSERT INTO produtos (produto,ativo) 
             VALUES ('".$produto->getProduto()."', '".$produto->getAtivo()."')";
+
         $bd->query($sql); 
-        header("Location: http://localhost/projeto-silhouette-orca/views/produto.php");
+        $bd->close();
     }
 
     //busca a lista de produtos
     public function listar() {
-        
+        $conexao = new Conexao();
+        $bd = $conexao->conectar();
 
+        $sql = "SELECT * FROM produtos";
+
+        $resultados = $bd->query($sql);
+        $bd->close();
+        return $resultados;
     }
 }
 
