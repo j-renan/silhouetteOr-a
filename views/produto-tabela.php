@@ -60,6 +60,9 @@
 	<script>
 	
 		function setProdutoEditar(id, produto) {			
+			var campoProdutoId = document.getElementById("produtoId");	
+			campoProdutoId.value = id;
+			
 			var campoProduto = document.getElementById("produto");					
 			campoProduto.value = produto;
 		}					

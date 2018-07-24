@@ -20,15 +20,21 @@
   <hr/>
   <br/>
   <form action="../controller/produto-ctrl.php" method="post">
-  <!--linha um nome, preço unitario-->
+  <!--linha um id, nome, ativo-->
     <div class="row">
+		<div class="col-md-1">
+			<div class="form-group">
+				<label>ID</label>
+            <input type="text" class="form-control" name="produtoId" id="produtoId" readonly/>
+          </div>
+		</div>
         <div class="col-md-6">
           <div class="form-group">
             <label>Produto</label>
             <input type="text" class="form-control" name="produto" id="produto" required/>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="checkbox">
             <br/>
             <label>
