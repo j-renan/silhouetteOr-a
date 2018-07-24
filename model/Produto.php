@@ -4,7 +4,8 @@ class Produto {
     private $produto;
     private $ativo;   
 
-    public function Produto($produto, $ativo) {     
+    public function Produto($id, $produto, $ativo) {
+        $this->id=$id;     
         $this->produto = $produto;
         $this->ativo = $ativo;        
     }

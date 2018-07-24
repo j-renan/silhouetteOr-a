@@ -24,6 +24,17 @@ class ProdutoDAO {
         $bd->close();
         return $resultados;
     }
+
+    //função que atualiza um produto
+    public function atualizar(Produto $produto) {
+        $conexao = new Conexao();
+        $bd = $conexao->conectar();
+       
+        $sql = "UPDATE produtos SET produto='".$produto->getProduto()."' WHERE id='".$produto->getId()."'";
+       
+        $bd->query($sql); 
+        $bd->close();
+    }
 }
 
 
