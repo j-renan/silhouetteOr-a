@@ -104,7 +104,7 @@ function removerCampos(id){
 </script>
 
 
-<div class="row" id="origem">
+<div class="row" id="origem" type="invisible">
   <div class="col-md-6">
     <div class="form-group">
       <h3>Materiais a Utilizar</h3>
