@@ -12,8 +12,7 @@
   <!--barra de navegação-->
   <?php 
     include './header.php';
-    include '../helper/Helper.php';
-    echo "Produto cadastrado = ". $produtoCadastrado;
+	include '../helper/Helper.php';	
   ?>
 
 <div class="container">
@@ -31,7 +30,7 @@
         </div>
         <div class="col-md-6">
           <div class="checkbox">
-            </br>
+            <br/>
             <label>
               <input type="checkbox" name="ativo" value="true" checked> Ativo
             </label>
@@ -56,7 +55,18 @@
     <br/>
 
     <!-- mensagem de cadastro de produto-->
-    <div class="alert alert-success" role="alert">Produto cadastrado com sucesso!</div> 
+	<?php
+		echo "PRODUTO = ".$_SESSION['produto_cadastrado'];
+		echo "SESSAO ".session_status();
+		/*if (isset($_SESSION['produto_cadastrado'])) {
+			$produtoCadastrado = $_SESSION['produto_cadastrado'];
+			echo "produto cadastrado = ".$produtoCadastrado;
+			if ($produtoCadastrado == "sim") {
+				echo "<div>Produto cadastrado com sucesso!</div>";			
+			}
+		}*/	
+	?>
+    <!--<div class="alert alert-success" role="alert"></div>--> 
 
   <br/>
     <?php include './produto-tabela.php';?>

@@ -11,7 +11,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <?php 
-          $paginaLink = basename($_SERVER['SCRIPT_NAME']);
+          $paginaLink = basename($_SERVER['SCRIPT_NAME']);		  
         ?>
           <ul class="nav navbar-nav">
             <li <?php if($paginaLink == "cliente.php") {echo 'class="active"';}else{echo 'class=""';} ?>><a href="cliente.php" >Clientes</a></li>
