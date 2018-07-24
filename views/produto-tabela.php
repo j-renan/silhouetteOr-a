@@ -10,8 +10,8 @@
               <th>ID</th>
               <th>Produto</th>
               <th>Ativo</th>
-              <!--<th>Editar</th>
-              <th>Excluir</th>-->
+              <th>Editar</th>
+              <th>Excluir</th>
             </tr>
           </thead>          
 
@@ -35,6 +35,19 @@
                   <td> ". $linha["id"] ." </td>
                   <td> ". $linha["produto"] ." </td>
                   <td> ". $ativo ." </td>
+				  
+				  <td width=\"100px\">
+					<button class=\"btn btn-success\" onclick=\"setProdutoEditar(".$linha['id'].", '".$linha['produto']."')\">
+						<span class=\"glyphicon glyphicon-pencil\"></span>
+					</button>
+				  </td>
+				  
+				  <td width=\"100px\">
+					<button class=\"btn btn-danger\">
+						<span class=\"glyphicon glyphicon-remove\"></span>
+					</button>
+				  </td>
+				  
                 </tr>";
               }                            
             ?>
@@ -43,3 +56,12 @@
         </table>
       </div>    
     </div>
+	<!-- codigo javascript -->
+	<script>
+	
+		function setProdutoEditar(id, produto) {			
+			var campoProduto = document.getElementById("produto");					
+			campoProduto.value = produto;
+		}					
+		
+	</script>

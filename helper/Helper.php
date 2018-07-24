@@ -1,6 +1,6 @@
 <?php
 	// se não tiver sessão iniciada, inicia a sessão
-	echo "SESSAO ".session_status();	
+	//echo "SESSAO ".session_status();	
 	if(session_status() != 1) {				
 	   session_start();
 	   $_SESSION['produto_cadastrado'] = 'nao';

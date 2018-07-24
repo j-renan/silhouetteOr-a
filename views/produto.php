@@ -25,7 +25,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Produto</label>
-            <input type="text" class="form-control" name="produto" required/>
+            <input type="text" class="form-control" name="produto" id="produto" required/>
           </div>
         </div>
         <div class="col-md-6">
@@ -56,8 +56,8 @@
 
     <!-- mensagem de cadastro de produto-->
 	<?php
-		echo "PRODUTO = ".$_SESSION['produto_cadastrado'];
-		echo "SESSAO ".session_status();
+		//echo "PRODUTO = ".$_SESSION['produto_cadastrado'];
+		//echo "SESSAO ".session_status();
 		/*if (isset($_SESSION['produto_cadastrado'])) {
 			$produtoCadastrado = $_SESSION['produto_cadastrado'];
 			echo "produto cadastrado = ".$produtoCadastrado;
