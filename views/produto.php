@@ -18,7 +18,7 @@
   <h1>Cadastro de Produto</h1>
   <hr/>
   <br/>
-  <form action="../controller/produto-ctrl.php" method="post">
+  <form action="../controller/produto-ctrl.php" method="post" id="formProduto">
   
   <!-- campo oculto para usar na exclusao de produto -->
   <input type="hidden" name="excluirProduto" id="excluirProduto" value="0" />
