@@ -43,7 +43,8 @@
 				  </td>
 				  
 				  <td width=\"100px\">
-					<button class=\"btn btn-danger\">
+					<button class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#janelaExcluirProduto\" 
+						onclick=\"excluirProduto(".$linha['id'].", '".$linha['produto']."')\">
 						<span class=\"glyphicon glyphicon-remove\"></span>
 					</button>
 				  </td>
@@ -66,5 +67,12 @@
 			var campoProduto = document.getElementById("produto");					
 			campoProduto.value = produto;
 		}					
+		
+		function excluirProduto(id, produto) {
+			var paragrafoExcluir = document.getElementById("mensagemExcluirProduto");
+			var mensagem = "Deseja excluir produto " + produto + " ?";
+			paragrafoExcluir.textContent = mensagem;
+			console.log(id, produto);
+		}
 		
 	</script>

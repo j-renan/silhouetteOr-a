@@ -12,7 +12,7 @@
   <!--barra de navegação-->
   <?php 
     include './header.php';
-	include '../helper/Helper.php';	
+	include '../helper/Helper.php';		
   ?>
 
 <div class="container">
@@ -78,6 +78,27 @@
     <?php include './produto-tabela.php';?>
 
   </div>
+  
+  <!-- janela de confirmação para excluir produto -->
+  <div class="modal fade" id="janelaExcluirProduto" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Excluir Produto</h4>
+      </div>
+      <div class="modal-body">
+		<strong>
+			<p id="mensagemExcluirProduto"></p>
+		</strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!--incluindo arquivos necessarios para a biblioteca-->
     <script src="../assets/js/jquery.min.js"></script>
