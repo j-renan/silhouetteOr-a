@@ -11,8 +11,7 @@
 <body>
   <!--barra de navegação-->
   <?php 
-    include './header.php';
-	include '../helper/Helper.php';		
+    include './header.php';	
   ?>
 
 <div class="container">
@@ -20,6 +19,10 @@
   <hr/>
   <br/>
   <form action="../controller/produto-ctrl.php" method="post">
+  
+  <!-- campo oculto para usar na exclusao de produto -->
+  <input type="hidden" name="excluirProduto" id="excluirProduto" value="0" />
+  
   <!--linha um id, nome, ativo-->
     <div class="row">
 		<div class="col-md-1">

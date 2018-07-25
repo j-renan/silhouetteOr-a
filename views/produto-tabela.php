@@ -69,10 +69,18 @@
 		}					
 		
 		function excluirProduto(id, produto) {
+			// monta a mensagem para exibir na janela modal
 			var paragrafoExcluir = document.getElementById("mensagemExcluirProduto");
 			var mensagem = "Deseja excluir produto " + produto + " ?";
 			paragrafoExcluir.textContent = mensagem;
-			console.log(id, produto);
+			
+			// pegando referencia do excluir produto e setando o id do produto a ser excluido
+			var hiddenExcluirProduto = document.getElementById("excluirProduto");
+			hiddenExcluirProduto.value = 1;
+			
+			var campoProdutoId = document.getElementById("produtoId");	
+			campoProdutoId.value = id;
+			
 		}
 		
 	</script>
