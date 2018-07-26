@@ -26,6 +26,3 @@ if (is_numeric($produto_id)) {
 }
 
 header("Location: http://localhost/projeto-silhouette-orca/views/produto.php");
-
-
-

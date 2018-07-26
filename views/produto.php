@@ -63,23 +63,11 @@
     </form>
     <br/>
 
-    <!-- mensagem de cadastro de produto-->
-	<?php
-		//echo "PRODUTO = ".$_SESSION['produto_cadastrado'];
-		//echo "SESSAO ".session_status();
-		/*if (isset($_SESSION['produto_cadastrado'])) {
-			$produtoCadastrado = $_SESSION['produto_cadastrado'];
-			echo "produto cadastrado = ".$produtoCadastrado;
-			if ($produtoCadastrado == "sim") {
-				echo "<div>Produto cadastrado com sucesso!</div>";			
-			}
-		}*/	
-	?>
-    <!--<div class="alert alert-success" role="alert"></div>--> 
+    <!-- mensagem de cadastro de produto-->	
+    <div class="alert alert-success" role="alert" style="display: none;"></div> 
 
   <br/>
     <?php include './produto-tabela.php';?>
-
   </div>
   
   <!-- janela de confirmação para excluir produto -->
