@@ -81,9 +81,13 @@
 			var campoProdutoId = document.getElementById("produtoId");	
 			campoProdutoId.value = id;
 			
-			var formProduto = document.getElementById("formProduto");
-			formProduto.submit();
 			
 		}
+
+    function excluirProdutoConfirmar(){
+      var formProduto = document.getElementById("formProduto");
+			formProduto.submit();
+			
+    }
 		
 	</script>

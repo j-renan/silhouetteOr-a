@@ -4,6 +4,7 @@ include '../dao/ProdutoDAO.php';
 
 $produto_nome = $_POST["produto"];
 $produto_id =$_POST["produtoId"];
+$produto_remover =$_POST["excluirProduto"];
 
 // tratando a variável ativo
 $ativo = 0;
@@ -17,8 +18,16 @@ $produtoDAO = new ProdutoDAO();
 
 // vereficação se existe id, se existir é atualização, se não existir é inserção de novo produto
 if (is_numeric($produto_id)) {
-    $produto = new Produto($produto_id, $produto_nome, $ativo);
-    $produtoDAO->atualizar($produto);
+
+    // verefica se é excluir ou atualizar
+    if ($produto_remover == 1) {
+        $produto = new Produto($produto_id, null, null);
+        $produtoDAO->remover($produto);
+    } else {
+        $produto = new Produto($produto_id, $produto_nome, $ativo);
+        $produtoDAO->atualizar($produto);
+    }
+    
 } else { 
     // criar um produto
     $produto = new Produto(null,$produto_nome, $ativo);

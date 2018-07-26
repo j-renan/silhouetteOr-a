@@ -35,6 +35,17 @@ class ProdutoDAO {
         $bd->query($sql); 
         $bd->close();
     }
+
+    //função que apaga um produto
+    public function remover(Produto $produto) {
+        $conexao = new Conexao();
+        $bd = $conexao->conectar();
+       
+        $sql = "DELETE FROM produtos WHERE id='".$produto->getId()."'";
+       
+        $bd->query($sql); 
+        $bd->close();
+    }
 }
 
 

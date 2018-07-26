@@ -85,7 +85,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger">Confirmar</button>
+        <button type="button" class="btn btn-danger" onclick="excluirProdutoConfirmar()">Confirmar</button>
       </div>
     </div>
   </div>
