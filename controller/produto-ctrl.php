@@ -22,7 +22,7 @@ if (is_numeric($produto_id)) {
     // verefica se é excluir ou atualizar
     if ($produto_remover == 1) {
         $produto = new Produto($produto_id, null, null);
-        $produtoDAO->remover($produto);
+        $produtoDAO->remover($produto);		
     } else {
         $produto = new Produto($produto_id, $produto_nome, $ativo);
         $produtoDAO->atualizar($produto);

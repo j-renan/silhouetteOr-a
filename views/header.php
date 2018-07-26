@@ -23,3 +23,13 @@
         </div>
       </div>
   </nav>
+  
+	<script>
+		// codigo que verifica a pagina clicada para alterar variaveis de localstorage
+		var paginaCorrente = "<?php echo $paginaLink?>";
+		
+		var localStorageRemover = localStorage.getItem('remover');	
+		if (paginaCorrente != "produto.php") {
+			localStorage.removeItem('remover');
+		}
+	</script>	

@@ -64,7 +64,9 @@
     <br/>
 
     <!-- mensagem de cadastro de produto-->	
-    <div class="alert alert-success" role="alert" style="display: none;"></div> 
+    <div class="alert alert-success" role="alert" style="display: none;" id="mensagemRemover">
+		Produto removido com sucesso !
+	</div> 
 
   <br/>
     <?php include './produto-tabela.php';?>
@@ -85,7 +87,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-danger" onclick="excluirProdutoConfirmar()">Confirmar</button>
+        <button type="button" class="btn btn-danger" id="removerProduto" onclick="excluirProdutoConfirmar()">Confirmar</button>
       </div>
     </div>
   </div>
@@ -95,5 +97,26 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     
+	<!-- exibe a mensagem conforme a ação, cadastrar, atualizar, excluir -->
+	
+	<script>
+		<!-- remover -->
+		var botaoRemover = document.getElementById("removerProduto");
+				
+		botaoRemover.addEventListener("click", exibirMensagemRemover);
+		
+		function exibirMensagemRemover() {
+			localStorage.setItem('remover', true);
+		}
+		
+		// codigo que verifica se foi removido um produto
+		var localStorageRemover = localStorage.getItem('remover');
+		
+		if (localStorageRemover == "true") {
+			var mensagem = document.getElementById("mensagemRemover");
+			mensagem.style.display = "block";
+		}
+	</script>
+		
     </body>
 </html>
