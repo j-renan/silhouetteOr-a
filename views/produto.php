@@ -65,8 +65,8 @@
 
     <!-- mensagem de cadastro de produto-->	
     <div class="alert alert-success" role="alert" style="display: none;" id="mensagem">
-		  <p id="texto"></p>
-      <span class="pull-right" style="cursor: pointer;" onclick="removerMensagem()">X</span>
+		<span id="texto"></span>
+		<span class="pull-right" style="cursor: pointer;" onclick="removerMensagem()">X</span>
 	</div> 
 
   <br/>
@@ -104,33 +104,41 @@
 		<!-- remover -->
     var mensagem = document.getElementById("mensagem");
     var texto = document.getElementById("texto");
-		var botaoRemover = document.getElementById("removerProduto");
+	var botaoRemover = document.getElementById("removerProduto");
     var botaoCadastrar = document.getElementById("cadastrarProduto");
 				
-		botaoRemover.addEventListener("click", exibirMensagemRemover);
+	botaoRemover.addEventListener("click", exibirMensagemRemover);
     botaoCadastrar.addEventListener("click", exibirMensagemCadastrar);
 		
-		function exibirMensagemRemover() {
-			localStorage.setItem('remover', true);
-      texto.textContent="Produto removido com sucesso ! ";
+	function exibirMensagemRemover() {
+		localStorage.setItem('remover', true);		
    	}
 
     function exibirMensagemCadastrar() {
-      localStorage.setItem('cadastrar', true);
-      texto.textContent="Produto cadastrado com sucesso ! ";
+      localStorage.setItem('cadastrar', true);      
     }
 		
 		// codigo que verifica se foi removido um produto
-		var localStorageRemover = localStorage.getItem('remover');
+	var localStorageRemover = localStorage.getItem('remover');
     var localStorageCadastrar = localStorage.getItem('cadastrar');
 		
-		if (localStorageRemover == "true" || localStorageCadastrar == "true") {			
-			mensagem.style.display = "block";
-		}
+	if (localStorageRemover == "true") {			
+		
+		mensagem.style.display = "block";		
+		texto.textContent="Produto removido com sucesso ! ";
+		
+	} else if (localStorageCadastrar == "true") {
+		
+		mensagem.style.display = "block";		
+		texto.textContent="Produto cadastrado com sucesso ! ";
+	}
 
     function removerMensagem() {
       mensagem.style.display = "none";
+	  localStorage.removeItem('remover');
+	  localStorage.removeItem('cadastrar');
     }
+	
 	</script>
 		
     </body>
