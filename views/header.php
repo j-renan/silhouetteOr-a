@@ -32,5 +32,6 @@
 		if (paginaCorrente != "produto.php") {
 			localStorage.removeItem('remover');
       localStorage.removeItem('cadastrar');
+      localStorage.removeItem('editar');
 		}
 	</script>	

@@ -104,7 +104,7 @@
 		<!-- remover -->
     var mensagem = document.getElementById("mensagem");
     var texto = document.getElementById("texto");
-	var botaoRemover = document.getElementById("removerProduto");
+	  var botaoRemover = document.getElementById("removerProduto");
     var botaoCadastrar = document.getElementById("cadastrarProduto");
 				
 	botaoRemover.addEventListener("click", exibirMensagemRemover);
@@ -115,12 +115,19 @@
    	}
 
     function exibirMensagemCadastrar() {
-      localStorage.setItem('cadastrar', true);      
+      var campoProdutoId = document.getElementById("produtoId");
+      if (campoProdutoId == "") {
+        localStorage.setItem('cadastrar', true);
+      } else {
+        localStorage.setItem('editar', true);	 
+      }               
     }
 		
 		// codigo que verifica se foi removido um produto
-	var localStorageRemover = localStorage.getItem('remover');
+	  var localStorageRemover = localStorage.getItem('remover');
     var localStorageCadastrar = localStorage.getItem('cadastrar');
+    var localStorageEditar = localStorage.getItem('editar');
+		
 		
 	if (localStorageRemover == "true") {			
 		
@@ -131,12 +138,19 @@
 		
 		mensagem.style.display = "block";		
 		texto.textContent="Produto cadastrado com sucesso ! ";
-	}
+
+	} else if (localStorageEditar == "true") {
+
+    mensagem.style.display = "block";		
+		texto.textContent="Produto atualizado com sucesso ! ";
+    
+  }
 
     function removerMensagem() {
       mensagem.style.display = "none";
 	  localStorage.removeItem('remover');
 	  localStorage.removeItem('cadastrar');
+    localStorage.removeItem('editar');
     }
 	
 	</script>

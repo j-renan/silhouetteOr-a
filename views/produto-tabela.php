@@ -66,6 +66,7 @@
 			
 			var campoProduto = document.getElementById("produto");					
 			campoProduto.value = produto;
+     
 		}					
 		
 		function excluirProduto(id, produto) {
