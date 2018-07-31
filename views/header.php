@@ -28,10 +28,8 @@
 		// codigo que verifica a pagina clicada para alterar variaveis de localstorage
 		var paginaCorrente = "<?php echo $paginaLink?>";
 		
-		var localStorageRemover = localStorage.getItem('remover');	
+		var localStorageAcao = localStorage.getItem('acao');	
 		if (paginaCorrente != "produto.php") {
-			localStorage.removeItem('remover');
-      localStorage.removeItem('cadastrar');
-      localStorage.removeItem('editar');
+			localStorage.removeItem('acao');
 		}
 	</script>	

@@ -50,7 +50,7 @@
     <!--adicionando botoes-->
     <div class="row">
       <div class="col-md-2">
-        <button type="submit" class="btn btn-primary" id="cadastrarProduto">
+        <button class="btn btn-primary" id="cadastrarProduto">
           SALVAR <span class="glyphicon glyphicon-plus-sign"></span>
         </button>
       </div>
@@ -100,57 +100,54 @@
     
 	<!-- exibe a mensagem conforme a ação, cadastrar, atualizar, excluir -->
 	
-	<script>
-		<!-- remover -->
+	<script>		
     var mensagem = document.getElementById("mensagem");
     var texto = document.getElementById("texto");
-	  var botaoRemover = document.getElementById("removerProduto");
-    var botaoCadastrar = document.getElementById("cadastrarProduto");
+	var botaoRemover = document.getElementById("removerProduto");
+	var botaoCadastrar = document.getElementById("cadastrarProduto");
 				
 	botaoRemover.addEventListener("click", exibirMensagemRemover);
     botaoCadastrar.addEventListener("click", exibirMensagemCadastrar);
 		
 	function exibirMensagemRemover() {
-		localStorage.setItem('remover', true);		
+		localStorage.setItem('acao', 'remover');		
    	}
 
-    function exibirMensagemCadastrar() {
+    function exibirMensagemCadastrar() {				
+		
       var campoProdutoId = document.getElementById("produtoId");
-      if (campoProdutoId == "") {
-        localStorage.setItem('cadastrar', true);
+	  
+      if (campoProdutoId.value == "") {
+        localStorage.setItem('acao', 'cadastrar');
       } else {
-        localStorage.setItem('editar', true);	 
+        localStorage.setItem('acao', 'editar');	 
       }               
     }
 		
-		// codigo que verifica se foi removido um produto
-	  var localStorageRemover = localStorage.getItem('remover');
-    var localStorageCadastrar = localStorage.getItem('cadastrar');
-    var localStorageEditar = localStorage.getItem('editar');
+	// codigo que verifica a mensagem do produto a ser exibida
+	var localStorageAcao = localStorage.getItem('acao');    
 		
 		
-	if (localStorageRemover == "true") {			
+	if (localStorageAcao == "remover") {			
 		
 		mensagem.style.display = "block";		
 		texto.textContent="Produto removido com sucesso ! ";
 		
-	} else if (localStorageCadastrar == "true") {
+	} else if (localStorageAcao == "cadastrar") {
 		
 		mensagem.style.display = "block";		
 		texto.textContent="Produto cadastrado com sucesso ! ";
 
-	} else if (localStorageEditar == "true") {
+	} else if (localStorageAcao == "editar") {
 
-    mensagem.style.display = "block";		
+		mensagem.style.display = "block";		
 		texto.textContent="Produto atualizado com sucesso ! ";
     
   }
 
     function removerMensagem() {
       mensagem.style.display = "none";
-	  localStorage.removeItem('remover');
-	  localStorage.removeItem('cadastrar');
-    localStorage.removeItem('editar');
+	  localStorage.removeItem('acao');
     }
 	
 	</script>
