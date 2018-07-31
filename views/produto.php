@@ -50,7 +50,7 @@
     <!--adicionando botoes-->
     <div class="row">
       <div class="col-md-2">
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary" id="cadastrarProduto">
           SALVAR <span class="glyphicon glyphicon-plus-sign"></span>
         </button>
       </div>
@@ -64,9 +64,9 @@
     <br/>
 
     <!-- mensagem de cadastro de produto-->	
-    <div class="alert alert-success" role="alert" style="display: none;" id="mensagemRemover">
-		  Produto removido com sucesso ! 
-      <span class="pull-right" style="cursor: pointer;" onclick="removerMensagemApagar()">X</span>
+    <div class="alert alert-success" role="alert" style="display: none;" id="mensagem">
+		  <p id="texto"></p>
+      <span class="pull-right" style="cursor: pointer;" onclick="removerMensagem()">X</span>
 	</div> 
 
   <br/>
@@ -102,24 +102,33 @@
 	
 	<script>
 		<!-- remover -->
+    var mensagem = document.getElementById("mensagem");
+    var texto = document.getElementById("texto");
 		var botaoRemover = document.getElementById("removerProduto");
+    var botaoCadastrar = document.getElementById("cadastrarProduto");
 				
 		botaoRemover.addEventListener("click", exibirMensagemRemover);
+    botaoCadastrar.addEventListener("click", exibirMensagemCadastrar);
 		
 		function exibirMensagemRemover() {
 			localStorage.setItem('remover', true);
-      localStorage.setItem('contador',0);
-		}
+      texto.textContent="Produto removido com sucesso ! ";
+   	}
+
+    function exibirMensagemCadastrar() {
+      localStorage.setItem('cadastrar', true);
+      texto.textContent="Produto cadastrado com sucesso ! ";
+    }
 		
 		// codigo que verifica se foi removido um produto
 		var localStorageRemover = localStorage.getItem('remover');
-		var mensagem = document.getElementById("mensagemRemover");
-
-		if (localStorageRemover == "true") {			
+    var localStorageCadastrar = localStorage.getItem('cadastrar');
+		
+		if (localStorageRemover == "true" || localStorageCadastrar == "true") {			
 			mensagem.style.display = "block";
 		}
 
-    function removerMensagemApagar() {
+    function removerMensagem() {
       mensagem.style.display = "none";
     }
 	</script>

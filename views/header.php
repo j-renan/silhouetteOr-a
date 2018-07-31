@@ -31,5 +31,6 @@
 		var localStorageRemover = localStorage.getItem('remover');	
 		if (paginaCorrente != "produto.php") {
 			localStorage.removeItem('remover');
+      localStorage.removeItem('cadastrar');
 		}
 	</script>	
