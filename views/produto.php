@@ -65,7 +65,8 @@
 
     <!-- mensagem de cadastro de produto-->	
     <div class="alert alert-success" role="alert" style="display: none;" id="mensagemRemover">
-		Produto removido com sucesso !
+		  Produto removido com sucesso ! 
+      <span class="pull-right" style="cursor: pointer;" onclick="removerMensagemApagar()">X</span>
 	</div> 
 
   <br/>
@@ -107,15 +108,20 @@
 		
 		function exibirMensagemRemover() {
 			localStorage.setItem('remover', true);
+      localStorage.setItem('contador',0);
 		}
 		
 		// codigo que verifica se foi removido um produto
 		var localStorageRemover = localStorage.getItem('remover');
-		
-		if (localStorageRemover == "true") {
-			var mensagem = document.getElementById("mensagemRemover");
+		var mensagem = document.getElementById("mensagemRemover");
+
+		if (localStorageRemover == "true") {			
 			mensagem.style.display = "block";
 		}
+
+    function removerMensagemApagar() {
+      mensagem.style.display = "none";
+    }
 	</script>
 		
     </body>
