@@ -19,13 +19,19 @@
   <form action="">
   <!--linha um nome, preço unitario-->
     <div class="row">
+    <div class="col-md-1">
+			<div class="form-group">
+				<label>ID</label>
+            <input type="text" class="form-control" name="produtoId" id="produtoId" readonly/>
+          </div>
+		</div>
         <div class="col-md-6">
           <div class="form-group">
             <label>Material</label>
             <input type="text" class="form-control" name="material"/>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
           <div class="form-group">
             <label>Preço Unitário</label>
             <input type="text" class="form-control" name="punitario"/>
@@ -49,6 +55,8 @@
       </div>
     </div>
     </form>
+    <br/>
+    <?php include './material-tabela.php';?>
 
   </div>
 
