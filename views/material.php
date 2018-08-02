@@ -56,7 +56,7 @@
     </div>
     </form>
     <br/>
-    <?php /*include './material-tabela.php';*/?>
+    <?php include './material-tabela.php';?>
 
   </div>
 
@@ -80,7 +80,6 @@
 <?php
 	// incluindo referencias
 	include '../model/Material.php';
-	include '../dao/MaterialDAO.php';
 
 	// capturando evento do botão salvar	
 	if (isset($_REQUEST['Submit'])) {

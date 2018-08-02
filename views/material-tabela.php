@@ -20,13 +20,12 @@
             <?php               
               for ($i=0; $i < count($listaMateriais); $i++) {
 
-                $linha = $listaMateriais[$i];         
-            
+                $linha = $listaMateriais[$i];         				
                 
                 echo "<tr>
                   <td> ". $linha["id"] ." </td>
                   <td> ". $linha["material"] ." </td>
-                  <td> ". $preco["preco"] ." </td>
+                  <td> ". $linha["preco"] ." </td>
 				  
 				  <td width=\"100px\">
 					<button class=\"btn btn-success\" onclick=\"setMaterialEditar(".$linha['id'].", '".$linha['material'].",'".$linha['preco']."')\">
