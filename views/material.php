@@ -16,7 +16,7 @@
   <h1>Cadastro de Materiais</h1>
   <hr/>
   <br/>
-  <form action="">
+  <form action="" method="post">
   <!--linha um nome, preço unitario-->
     <div class="row">
     <div class="col-md-1">
@@ -28,13 +28,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Material</label>
-            <input type="text" class="form-control" name="material"/>
+            <input type="text" class="form-control" name="material" required />
           </div>
         </div>
         <div class="col-md-5">
           <div class="form-group">
             <label>Preço Unitário</label>
-            <input type="text" class="form-control" name="punitario"/>
+            <input type="text" class="form-control" name="preco" required />
           </div>
         </div>
     </div>
@@ -44,7 +44,7 @@
     <!--adicionando botoes-->
     <div class="row">
       <div class="col-md-2">
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary" name="Submit" value="salvar">
           SALVAR <span class="glyphicon glyphicon-plus-sign"></span>
         </button>
       </div>
@@ -56,7 +56,7 @@
     </div>
     </form>
     <br/>
-    <?php include './material-tabela.php';?>
+    <?php /*include './material-tabela.php';*/?>
 
   </div>
 
@@ -69,9 +69,33 @@
       $(document).ready(aplicarMascaras);
 
       function aplicarMascaras() {
-        $('.cpf').mask('000.000.000-00');        
+        $('.preco').mask('000.000.000,00', {reverse: true});        
+		
       }
 
     </script>
 </body>
 </html>
+
+<?php
+	// incluindo referencias
+	include '../model/Material.php';
+	include '../dao/MaterialDAO.php';
+
+	// capturando evento do botão salvar	
+	if (isset($_REQUEST['Submit'])) {
+		if ($_REQUEST['Submit'] == "salvar") {
+			
+			// criando variaveis da tabela material
+			$material = $_POST['material'];
+			$preco = $_POST['preco'];
+			
+			$material = new Material(null, $material, $preco);
+			
+			$materialDAO = new MaterialDAO();
+			$materialDAO->cadastrar($material);
+			
+		}		
+	}
+	
+?>
