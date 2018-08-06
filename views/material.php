@@ -16,7 +16,7 @@
   <h1>Cadastro de Materiais</h1>
   <hr/>
   <br/>
-  <form action="" method="post">
+  <form action="../controller/material-ctrl.php" method="post">
   <!--linha um nome, preço unitario-->
     <div class="row">
     <div class="col-md-1">
@@ -76,25 +76,3 @@
     </script>
 </body>
 </html>
-
-<?php
-	// incluindo referencias
-	include '../model/Material.php';
-
-	// capturando evento do botão salvar	
-	if (isset($_REQUEST['Submit'])) {
-		if ($_REQUEST['Submit'] == "salvar") {
-			
-			// criando variaveis da tabela material
-			$material = $_POST['material'];
-			$preco = $_POST['preco'];
-			
-			$material = new Material(null, $material, $preco);
-			
-			$materialDAO = new MaterialDAO();
-			$materialDAO->cadastrar($material);
-			
-		}		
-	}
-	
-?>
