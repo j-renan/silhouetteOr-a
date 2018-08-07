@@ -5,8 +5,8 @@ include '../dao/MaterialDAO.php';
 $material = $_POST['material'];
 $preco = $_POST['preco'];
 $material_id = $_POST['materialId'];
-//$material_remover = $_POST["excluirMaterial"];
-$material_remover = 0;
+$material_remover = $_POST["excluirMaterial"];
+
 
 $materialDAO = new MaterialDAO();
 

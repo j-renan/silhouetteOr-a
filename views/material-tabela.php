@@ -34,7 +34,7 @@
 				  </td>
 				  
 				  <td width=\"100px\">
-					<button class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#janelaExcluirProduto\" 
+					<button class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#janelaExcluirMaterial\" 
 						onclick=\"excluirMaterial(".$linha['id'].", '".$linha['material']."')\">
 						<span class=\"glyphicon glyphicon-remove\"></span>
 					</button>
@@ -65,23 +65,23 @@
 		
 		function excluirMaterial(id, material) {
 			// monta a mensagem para exibir na janela modal
-			//var paragrafoExcluir = document.getElementById("mensagemExcluirProduto");
-			//var mensagem = "Deseja excluir produto " + produto + " ?";
-			//paragrafoExcluir.textContent = mensagem;
+			var paragrafoExcluir = document.getElementById("mensagemExcluirMaterial");
+			var mensagem = "Deseja excluir material " + material + " ?";
+			paragrafoExcluir.textContent = mensagem;
 			
 			// pegando referencia do excluir produto e setando o id do produto a ser excluido
-			//var hiddenExcluirProduto = document.getElementById("excluirProduto");
-			//hiddenExcluirProduto.value = 1;
+			var hiddenExcluirMaterial = document.getElementById("excluirMaterial");
+			hiddenExcluirMaterial.value = 1;
 			
-			//var campoProdutoId = document.getElementById("produtoId");	
-			//campoProdutoId.value = id;
+			var campoMaterialId = document.getElementById("materialId");	
+			campoMaterialId.value = id;
 			
 			
 		}
 
     function excluirMaterialConfirmar(){
-      //var formProduto = document.getElementById("formProduto");
-			//formProduto.submit();
+      var formMaterial = document.getElementById("formMaterial");
+			formMaterial.submit();
 			
     }
 		

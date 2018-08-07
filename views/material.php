@@ -16,7 +16,11 @@
   <h1>Cadastro de Materiais</h1>
   <hr/>
   <br/>
-  <form action="../controller/material-ctrl.php" method="post">
+  <form action="../controller/material-ctrl.php" method="post" id="formMaterial">
+
+  <!-- campo oculto para usar na exclusao de produto -->
+  <input type="hidden" name="excluirMaterial" id="excluirMaterial" value="0" />
+
   <!--linha um nome, preço unitario-->
     <div class="row">
     <div class="col-md-1">
@@ -56,6 +60,28 @@
     </div>
     </form>
     <br/>
+
+    <!-- janela de confirmação para excluir produto -->
+  <div class="modal fade" id="janelaExcluirMaterial" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Excluir Material</h4>
+      </div>
+      <div class="modal-body">
+		<strong>
+			<p id="mensagemExcluirMaterial"></p>
+		</strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="removerMaterial" onclick="excluirMaterialConfirmar()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <?php include './material-tabela.php';?>
 
   </div>
