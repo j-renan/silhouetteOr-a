@@ -5,7 +5,7 @@ class MaterialDAO {
     public function cadastrar(Material $material) {
         $conexao = new Conexao();
         $bd = $conexao->conectar();
-       
+   
         $sql = "INSERT INTO materiais (material,preco) 
             VALUES ('".$material->getMaterial()."', '".$material->getPreco()."')";
 

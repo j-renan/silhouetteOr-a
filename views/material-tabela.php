@@ -28,7 +28,7 @@
                   <td> ". $linha["preco"] ." </td>
 				  
 				  <td width=\"100px\">
-					<button class=\"btn btn-success\" onclick=\"setMaterialEditar(".$linha['id'].", '".$linha['material'].",'".$linha['preco']."')\">
+					<button class=\"btn btn-success\" onclick=\"setMaterialEditar(".$linha['id'].", '".$linha['material']."','".$linha['preco']."')\">
 						<span class=\"glyphicon glyphicon-pencil\"></span>
 					</button>
 				  </td>
@@ -52,11 +52,14 @@
 	<script>
 	
 		function setMaterialEditar(id, material, preco) {			
-			//var campoProdutoId = document.getElementById("produtoId");	
-			//campoProdutoId.value = id;
+			var campoMaterialId = document.getElementById("materialId");
+			campoMaterialId.value = id;
 			
-			//var campoProduto = document.getElementById("produto");					
-			//campoProduto.value = produto;
+			var campoMaterial = document.getElementById("material");
+			campoMaterial.value = material;
+			
+			//passando valor de referencia com uma linha só
+			document.getElementById("preco").value = preco;
      
 		}					
 		

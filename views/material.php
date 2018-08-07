@@ -22,19 +22,19 @@
     <div class="col-md-1">
 			<div class="form-group">
 				<label>ID</label>
-            <input type="text" class="form-control" name="produtoId" id="produtoId" readonly/>
+            <input type="text" class="form-control" name="materialId" id="materialId" readonly/>
           </div>
 		</div>
         <div class="col-md-6">
           <div class="form-group">
             <label>Material</label>
-            <input type="text" class="form-control" name="material" required />
+            <input type="text" class="form-control" name="material" id="material" required />
           </div>
         </div>
         <div class="col-md-5">
           <div class="form-group">
             <label>Preço Unitário</label>
-            <input type="text" class="form-control" name="preco" required />
+            <input type="text" class="form-control" name="preco" id="preco" required />
           </div>
         </div>
     </div>
