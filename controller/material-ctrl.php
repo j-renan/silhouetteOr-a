@@ -6,12 +6,13 @@ $material = $_POST['material'];
 $preco = $_POST['preco'];
 $material_id = $_POST['materialId'];
 //$material_remover = $_POST["excluirMaterial"];
+$material_remover = 0;
 
 $materialDAO = new MaterialDAO();
 
 // vereficação se existe id, se existir é atualização, se não existir é inserção de novo produto
 if (is_numeric($material_id)) {
-
+	
     // verefica se é excluir ou atualizar
     if ($material_remover == 1) {
         $material = new Material($material_id, null, null);

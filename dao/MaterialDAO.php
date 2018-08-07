@@ -30,7 +30,7 @@ class MaterialDAO {
         $conexao = new Conexao();
         $bd = $conexao->conectar();
        
-        $sql = "UPDATE materiais SET material='".$material->getMaterial()."' WHERE id='".$material->getId()."'";
+        $sql = "UPDATE materiais SET material='".$material->getMaterial()."', preco='".$material->getPreco()."' WHERE id='".$material->getId()."'";
        
         $bd->query($sql); 
         $bd->close();
