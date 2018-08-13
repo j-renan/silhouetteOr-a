@@ -18,7 +18,7 @@
   <br/>
   <form action="../controller/material-ctrl.php" method="post" id="formMaterial">
 
-  <!-- campo oculto para usar na exclusao de produto -->
+  <!-- campo oculto para usar na exclusao de material -->
   <input type="hidden" name="excluirMaterial" id="excluirMaterial" value="0" />
 
   <!--linha um nome, preço unitario-->
@@ -48,7 +48,7 @@
     <!--adicionando botoes-->
     <div class="row">
       <div class="col-md-2">
-        <button type="submit" class="btn btn-primary" name="Submit" value="salvar">
+        <button type="submit" class="btn btn-primary" name="Submit" value="salvar" id="cadastrarMaterial">
           SALVAR <span class="glyphicon glyphicon-plus-sign"></span>
         </button>
       </div>
@@ -61,7 +61,14 @@
     </form>
     <br/>
 
-    <!-- janela de confirmação para excluir produto -->
+    <!-- mensagem de cadastro de material-->	
+    <div class="alert alert-success" role="alert" style="display: none;" id="mensagem">
+		<span id="texto"></span>
+		<span class="pull-right" style="cursor: pointer;" onclick="removerMensagem()">X</span>
+
+  </div> 
+
+    <!-- janela de confirmação para excluir material -->
   <div class="modal fade" id="janelaExcluirMaterial" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -90,6 +97,60 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/jquery.mask.js"></script>
+
+    <!-- exibe a mensagem conforme a ação, cadastrar, atualizar, excluir -->
+	
+	<script>		
+    var mensagem = document.getElementById("mensagem");
+    var texto = document.getElementById("texto");
+	var botaoRemover = document.getElementById("removerMaterial");
+	var botaoCadastrar = document.getElementById("cadastrarMaterial");
+				
+	botaoRemover.addEventListener("click", exibirMensagemRemover);
+    botaoCadastrar.addEventListener("click", exibirMensagemCadastrar);
+		
+	function exibirMensagemRemover() {
+		localStorage.setItem('acaoMaterial', 'remover');		
+   	}
+
+    function exibirMensagemCadastrar() {				
+		
+      var campoMaterialId = document.getElementById("materialId");
+	  
+      if (campoMaterialId.value == "") {
+        localStorage.setItem('acaoMaterial', 'cadastrar');
+      } else {
+        localStorage.setItem('acaoMaterial', 'editar');	 
+      }               
+    }
+		
+	// codigo que verifica a mensagem do produto a ser exibida
+	var localStorageAcao = localStorage.getItem('acaoMaterial');    
+		
+		
+	if (localStorageAcao == "remover") {			
+		
+		mensagem.style.display = "block";		
+		texto.textContent="Material removido com sucesso ! ";
+		
+	} else if (localStorageAcao == "cadastrar") {
+		
+		mensagem.style.display = "block";		
+		texto.textContent="Material cadastrado com sucesso ! ";
+
+	} else if (localStorageAcao == "editar") {
+
+		mensagem.style.display = "block";		
+		texto.textContent="Material atualizado com sucesso ! ";
+    
+  }
+
+    function removerMensagem() {
+      mensagem.style.display = "none";
+	  localStorage.removeItem('acaoMaterial');
+    }
+	
+	</script>
 
     <script>
       $(document).ready(aplicarMascaras);

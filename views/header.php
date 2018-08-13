@@ -32,4 +32,9 @@
 		if (paginaCorrente != "produto.php") {
 			localStorage.removeItem('acao');
 		}
+
+    var localStorageAcaoMaterial = localStorage.getItem('acaoMaterial');	
+		if (paginaCorrente != "material.php") {
+			localStorage.removeItem('acaoMaterial');
+		}
 	</script>	

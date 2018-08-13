@@ -69,7 +69,7 @@
 			var mensagem = "Deseja excluir material " + material + " ?";
 			paragrafoExcluir.textContent = mensagem;
 			
-			// pegando referencia do excluir produto e setando o id do produto a ser excluido
+			// pegando referencia do excluir material e setando o id do material a ser excluido
 			var hiddenExcluirMaterial = document.getElementById("excluirMaterial");
 			hiddenExcluirMaterial.value = 1;
 			
