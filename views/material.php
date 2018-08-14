@@ -38,7 +38,7 @@
         <div class="col-md-5">
           <div class="form-group">
             <label>Preço Unitário</label>
-            <input type="text" class="form-control" name="preco" id="preco" required />
+            <input type="text" class="form-control preco" name="preco" id="preco" required />
           </div>
         </div>
     </div>
@@ -101,6 +101,15 @@
     <!-- exibe a mensagem conforme a ação, cadastrar, atualizar, excluir -->
 	
 	<script>		
+	
+	$(document).ready(aplicarMascaras);
+
+      function aplicarMascaras() {		  
+        $('.preco').mask('000.000.000.00', {reverse: true});        
+		
+    }
+	  
+	  
     var mensagem = document.getElementById("mensagem");
     var texto = document.getElementById("texto");
 	var botaoRemover = document.getElementById("removerMaterial");
@@ -151,15 +160,5 @@
     }
 	
 	</script>
-
-    <script>
-      $(document).ready(aplicarMascaras);
-
-      function aplicarMascaras() {
-        $('.preco').mask('000.000.000,00', {reverse: true});        
-		
-      }
-
-    </script>
 </body>
 </html>
