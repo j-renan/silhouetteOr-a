@@ -9,7 +9,8 @@ class Cliente {
     private $cidade;
     private $email;
 
-    public function Cliente($nome,$data,$endereco,$cpf,$telefone,$cidade,$email) {
+    public function Cliente($id,$nome,$data,$endereco,$cpf,$telefone,$cidade,$email) {
+		$this->id = $id;
         $this->nome=$nome;
         $this->data=$data;
         $this->endereco=$endereco;

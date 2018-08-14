@@ -17,20 +17,31 @@
   <hr/>
   <br/>
   <form action="">
-  <!--linha um id, nome-->
+  <!--linha um id, nome, cep-->
     <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-2">
           <div class="form-group">
             <label>ID</label>
             <input type="text" class="form-control" name="id" readonly/>
           </div>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-6">
           <div class="form-group">
             <label>Nome</label>
             <input type="text" class="form-control" name="nome"/>
           </div>
         </div>
+		<div class="col-md-3">
+          <div class="form-group">
+            <label>CEP</label>
+            <input type="text" class="form-control" name="cep"/>			
+          </div>		  		  
+        </div>
+		<div class="col-md-1" style="margin-top: 24px;">
+			<button class="btn btn-primary">
+				<span class="glyphicon glyphicon-search"></span>
+		  </button>
+		</div>
     </div>
 
     <!--linha dois data nascimento, endereço-->
