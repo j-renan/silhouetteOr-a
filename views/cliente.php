@@ -34,13 +34,13 @@
 		<div class="col-md-3">
           <div class="form-group">
             <label>CEP</label>
-            <input type="text" class="form-control" name="cep"/>			
+            <input type="text" class="form-control" name="cep" id="cep" />			
           </div>		  		  
         </div>
 		<div class="col-md-1" style="margin-top: 24px;">
-			<button class="btn btn-primary">
+			<a class="btn btn-primary" onclick="buscarEndereco()">
 				<span class="glyphicon glyphicon-search"></span>
-		  </button>
+			</a>
 		</div>
     </div>
 
@@ -55,7 +55,7 @@
         <div class="col-md-9">
           <div class="form-group">
             <label>Endereço</label>
-            <input type="text" class="form-control" name="endereco"/>
+            <input type="text" class="form-control" name="endereco" id="endereco"/>
           </div>
         </div>
     </div>
@@ -120,6 +120,19 @@
       function aplicarMascaras() {
         $('.cpf').mask('000.000.000-00');        
       }
+	  
+	  // função para buscar endereço pelo cep
+	  function buscarEndereco() {
+		var cep = document.getElementById("cep");		  
+		  
+		$.getJSON("https://viacep.com.br/ws/"+ cep.value +"/json/?callback=?", recebeEndereco);
+	  }
+	  
+	  function recebeEndereco(end) {
+		  console.log('endereco = ', end);
+		  var endereco = document.getElementById('endereco');		  
+		  endereco.value = end.logradouro + ",    " + end.bairro;
+	  }
 
     </script>
 </body>
