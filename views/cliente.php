@@ -106,6 +106,37 @@
       </div>
     </div>
     </form>
+    </br>
+
+    <!-- mensagem de cadastro de Cliente-->	
+    <div class="alert alert-success" role="alert" style="display: none;" id="mensagem">
+		<span id="texto"></span>
+		<span class="pull-right" style="cursor: pointer;" onclick="removerMensagem()">X</span>
+
+  </div>
+
+  <!-- janela de confirmação para excluir cliente -->
+  <div class="modal fade" id="janelaExcluirCliente" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Excluir Clientes</h4>
+      </div>
+      <div class="modal-body">
+		<strong>
+			<p id="mensagemExcluirCliente"></p>
+		</strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-danger" id="removerCliente" onclick="excluirClienteConfirmar()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <?php include './cliente-tabela.php';?>
 
   </div>
 
@@ -113,6 +144,58 @@
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/jquery.mask.js"></script>
+
+    <!-- exibe a mensagem conforme a ação, cadastrar, atualizar, excluir -->
+    <script>
+    var mensagem = document.getElementById("mensagem");
+    var texto = document.getElementById("texto");
+	var botaoRemover = document.getElementById("removerCliente");
+	var botaoCadastrar = document.getElementById("cadastrarCliente");
+				
+	botaoRemover.addEventListener("click", exibirMensagemRemover);
+    botaoCadastrar.addEventListener("click", exibirMensagemCadastrar);
+		
+	function exibirMensagemRemover() {
+		localStorage.setItem('acaoCliente', 'remover');		
+   	}
+
+    function exibirMensagemCadastrar() {				
+		
+      var campoClienteId = document.getElementById("clienteId");
+	  
+      if (campoClienteId.value == "") {
+        localStorage.setItem('acaoCliente', 'cadastrar');
+      } else {
+        localStorage.setItem('acaoCliente', 'editar');	 
+      }               
+    }
+		
+	// codigo que verifica a mensagem do cliente a ser exibida
+	var localStorageAcao = localStorage.getItem('acaoCliente');    
+		
+		
+	if (localStorageAcao == "remover") {			
+		
+		mensagem.style.display = "block";		
+		texto.textContent="Cliente removido com sucesso ! ";
+		
+	} else if (localStorageAcao == "cadastrar") {
+		
+		mensagem.style.display = "block";		
+		texto.textContent="Cliente cadastrado com sucesso ! ";
+
+	} else if (localStorageAcao == "editar") {
+
+		mensagem.style.display = "block";		
+		texto.textContent="Cliente atualizado com sucesso ! ";
+    
+  }
+
+    function removerMensagem() {
+      mensagem.style.display = "none";
+	  localStorage.removeItem('acaoCliente');
+    }
+    </script>
 
     <script>
       $(document).ready(aplicarMascaras);

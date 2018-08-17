@@ -7,10 +7,11 @@ $preco = $_POST['preco'];
 $material_id = $_POST['materialId'];
 $material_remover = $_POST["excluirMaterial"];
 
+// passar material para o DAO inserir no banco de dados
 
 $materialDAO = new MaterialDAO();
 
-// vereficação se existe id, se existir é atualização, se não existir é inserção de novo produto
+// vereficação se existe id, se existir é atualização, se não existir é inserção de novo material
 if (is_numeric($material_id)) {
 	
     // verefica se é excluir ou atualizar

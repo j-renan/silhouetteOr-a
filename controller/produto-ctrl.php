@@ -3,7 +3,7 @@ include '../model/Produto.php';
 include '../dao/ProdutoDAO.php';
 
 $produto_nome = $_POST["produto"];
-$produto_id =$_POST["produtoId"];
+$produto_id = $_POST["produtoId"];
 $produto_remover =$_POST["excluirProduto"];
 
 // tratando a variável ativo

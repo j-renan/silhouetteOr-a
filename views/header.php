@@ -37,4 +37,9 @@
 		if (paginaCorrente != "material.php") {
 			localStorage.removeItem('acaoMaterial');
 		}
+
+    var localStorageAcaoCliente = localStorage.getItem('acaoCliente');	
+		if (paginaCorrente != "cliente.php") {
+			localStorage.removeItem('acaoCliente');
+		}
 	</script>	
