@@ -8,8 +8,9 @@ class Cliente {
     private $telefone;
     private $cidade;
     private $email;
+    private $cep;
 
-    public function Cliente($id,$nome,$data,$endereco,$cpf,$telefone,$cidade,$email) {
+    public function Cliente($id,$nome,$data,$endereco,$cpf,$telefone,$cidade,$email, $cep) {
 		$this->id = $id;
         $this->nome=$nome;
         $this->data=$data;
@@ -18,6 +19,7 @@ class Cliente {
         $this->telefone=$telefone;
         $this->cidade=$cidade;
         $this->email=$email;
+        $this->cep=$cep;
     }
 
     public function setId($id) {
@@ -32,7 +34,7 @@ class Cliente {
         $this->nome=$nome;
     }
 
-    public function getNome($nome) {
+    public function getNome() {
         return $this->nome;
     }
 
@@ -40,7 +42,7 @@ class Cliente {
         $this->data=$data;
     }
     
-    public function getData($data) {
+    public function getData() {
         return $this->data;
     }
 
@@ -48,7 +50,7 @@ class Cliente {
         $this->endereco=$endereco;
     }
 
-    public function getEndereco($endereco) {
+    public function getEndereco() {
         return $this->endereco;
     }
 
@@ -56,32 +58,40 @@ class Cliente {
         $this->cpf=$cpf;
     }
 
-    public function getCpf($cpf) {
-        return $this->$cpf;
+    public function getCpf() {
+        return $this->cpf;
     }
 
     public function setTelefone($telefone) {
         $this->telefone=$telefone;
     }
 
-    public function getTelefone($telefone) {
-        return $this->$telefone;
+    public function getTelefone() {
+        return $this->telefone;
     }
 
     public function setCidade($cidade) {
         $this->cidade=$cidade;
     }
 
-    public function getCidade($cidade) {
-        return $this->$cidade;
+    public function getCidade() {
+        return $this->cidade;
     }
 
     public function setEmail($email) {
         $this->email=$email;
     }
 
-    public function getEmail($email) {
-        return $this->$email;
+    public function getEmail() {
+        return $this->email;
+    }
+
+    public function setCep($cep) {
+        $this->cep=$cep;
+    }
+
+    public function getCep() {
+        return $this->cep;
     }
 }
 

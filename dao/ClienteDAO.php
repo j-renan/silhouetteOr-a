@@ -9,7 +9,7 @@ class ClienteDAO {
         $sql = "INSERT INTO clientes (nome, endereco, cep, cpf, telefone, cidade, email, data_nascimento)
             VALUES ('".$cliente->getNome()."', '".$cliente->getEndereco()."', '".$cliente->getCep()."', '".$cliente->getCpf()."',
                 '".$cliente->getTelefone()."', '".$cliente->getCidade()."', '".$cliente->getEmail()."', '".$cliente->getData()."')";
-
+        
         $bd->query($sql);
         $bd->close();        
     }

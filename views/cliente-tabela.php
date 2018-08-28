@@ -16,6 +16,8 @@
               <th>Cidade</th>
               <th>E-mail</th>
               <th>Data Nascimento</th>
+              <th>Editar</th>
+              <th>Excluir</th>
             </tr>
           </thead>
 

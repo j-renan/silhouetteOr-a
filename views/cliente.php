@@ -16,19 +16,19 @@
   <h1>Cadastro de Clientes</h1>
   <hr/>
   <br/>
-  <form action="">
+  <form action="../controller/cliente-ctrl.php" method="post" id="formCliente">
   <!--linha um id, nome, cep-->
     <div class="row">
         <div class="col-md-2">
           <div class="form-group">
             <label>ID</label>
-            <input type="text" class="form-control" name="id" readonly/>
+            <input type="text" class="form-control" name="clienteid" readonly/>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>Nome</label>
-            <input type="text" class="form-control" name="nome"/>
+            <input type="text" class="form-control" name="cliente"/>
           </div>
         </div>
 		<div class="col-md-3">
@@ -49,7 +49,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label>Data de Nascimento</label>
-            <input type="date" class="form-control" name="data-nascimento"/>
+            <input type="date" class="form-control" name="data_nascimento"/>
           </div>
         </div>
         <div class="col-md-9">
