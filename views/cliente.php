@@ -17,12 +17,16 @@
   <hr/>
   <br/>
   <form action="../controller/cliente-ctrl.php" method="post" id="formCliente">
+
+  <!-- campo oculto para usar na exclusao de material -->
+  <input type="hidden" name="excluirCliente" id="excluirCliente" value="0" />
+
   <!--linha um id, nome, cep-->
     <div class="row">
         <div class="col-md-2">
           <div class="form-group">
             <label>ID</label>
-            <input type="text" class="form-control" name="clienteid" readonly/>
+            <input type="text" class="form-control" name="clienteid" id="clienteid" readonly/>
           </div>
         </div>
         <div class="col-md-6">
@@ -121,7 +125,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Excluir Clientes</h4>
+        <h4 class="modal-title">Excluir Cliente</h4>
       </div>
       <div class="modal-body">
 		<strong>
@@ -153,7 +157,7 @@
 	var botaoCadastrar = document.getElementById("cadastrarCliente");
 				
 	botaoRemover.addEventListener("click", exibirMensagemRemover);
-    botaoCadastrar.addEventListener("click", exibirMensagemCadastrar);
+    //botaoCadastrar.addEventListener("click", exibirMensagemCadastrar);
 		
 	function exibirMensagemRemover() {
 		localStorage.setItem('acaoCliente', 'remover');		

@@ -49,6 +49,7 @@ class ClienteDAO {
         $bd = $conexao->conectar();
 
         $sql = "DELETE FROM clientes WHERE id='".$cliente->getId()."'";
+        
         $bd->query($sql);
         $bd->close();
 

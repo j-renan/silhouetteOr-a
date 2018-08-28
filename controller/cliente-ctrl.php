@@ -11,7 +11,7 @@ $cliente_telefone = $_POST["telefone"];
 $cliente_cidade = $_POST["cidade"];
 $cliente_email = $_POST["email"];
 $cliente_data = $_POST["data_nascimento"];
-//$cliente_remover = $_POST["excluirCliente"];
+$cliente_remover = $_POST["excluirCliente"];
 
 
 // passar cliente para o DAO inserir no banco de dados
@@ -24,6 +24,7 @@ if (is_numeric($cliente_id)) {
 
     // verefica se é excluir ou atualizar
     if ($cliente_remover == 1) {
+   
         $cliente = new Cliente($cliente_id, null, null, null, null, null, null, null, null);
         $clienteDAO->remover($cliente);
     } else {

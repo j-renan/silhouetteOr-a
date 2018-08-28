@@ -47,9 +47,8 @@
 				  </td>
 				  
 				  <td width=\"100px\">
-					<button class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#janelaExcluirMaterial\" 
-						onclick=\"excluirMaterial(".$linha['id'].", '".$linha['nome']."','".$linha['endereco']."',
-            '".$linha['cep']."','".$linha['cpf']."','".$linha['telefone']."','".$linha['cidade']."','".$linha['email']."','".$linha['data_nascimento']."')\">
+					<button class=\"btn btn-danger\" data-toggle=\"modal\" data-target=\"#janelaExcluirCliente\" 
+						onclick=\"excluirCliente(".$linha['id'].", '".$linha['nome']."')\">
 						<span class=\"glyphicon glyphicon-remove\"></span>
 					</button>
 				  </td>
@@ -96,18 +95,21 @@
        
   }					
   
-  function excluirCliente(id, nome, endereco, cep, cpf, telefone, cidade, email, data_nascimento) {
+  function excluirCliente(id, nome) {
+
     // monta a mensagem para exibir na janela modal
     var paragrafoExcluir = document.getElementById("mensagemExcluirCliente");
     var mensagem = "Deseja excluir cliente " + nome + " ?";
     paragrafoExcluir.textContent = mensagem;
     
+    
     // pegando referencia do excluir cliente e setando o id do cliente a ser excluido
     var hiddenExcluirCliente = document.getElementById("excluirCliente");
     hiddenExcluirCliente.value = 1;
     
-    var campoClienteId = document.getElementById("clienteId");	
+    var campoClienteId = document.getElementById("clienteid");	
     campoClienteId.value = id;
+   
     
     
   }
