@@ -34,8 +34,8 @@ class ClienteDAO {
         $bd = $conexao->conectar();
 
         $sql = "UPDATE clientes SET nome='".$cliente->getNome()."', endereco='".$cliente->getEndereco()."',
-            cep='".$cliente->getCep()."', cpf='".$cliente->getCpf()."', telefone='".$cliente->getTelefone."',
-            cidade='".$cliente->getCidade()."', email='".$cliente->getTelefone()."', data_nascimento='".$cliente->getData()."'
+            cep='".$cliente->getCep()."', cpf='".$cliente->getCpf()."', telefone='".$cliente->getTelefone()."',
+            cidade='".$cliente->getCidade()."', email='".$cliente->getEmail()."', data_nascimento='".$cliente->getData()."'
         WHERE id='".$cliente->getId()."'";
 
         $bd->query($sql);

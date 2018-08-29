@@ -27,11 +27,10 @@ if (is_numeric($cliente_id)) {
    
         $cliente = new Cliente($cliente_id, null, null, null, null, null, null, null, null);
         $clienteDAO->remover($cliente);
-    } else {
-        $cliente = new Cliente($cliente_nome, $cliente_id, $cliente_endereco, $cliente_cep, 
+    } else {		
+        $cliente = new Cliente($cliente_id, $cliente_nome, $cliente_data, $cliente_endereco,								
                                 $cliente_cpf, $cliente_telefone, $cliente_cidade, $cliente_email,
-                                $cliente_data, $cliente_remover);
-                                print_r($cliente);
+                                $cliente_cep);
         $clienteDAO->atualizar($cliente);
     }
 } else {
@@ -41,6 +40,6 @@ if (is_numeric($cliente_id)) {
     $clienteDAO->cadastrar($cliente); 
 }
 
-//header("Location: http://localhost/projeto-silhouette-orca/views/cliente.php");
+header("Location: http://localhost/projeto-silhouette-orca/views/cliente.php");
 
 ?>
