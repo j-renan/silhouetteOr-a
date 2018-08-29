@@ -32,7 +32,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Nome</label>
-            <input type="text" class="form-control" name="cliente"/>
+            <input type="text" class="form-control" name="cliente" id="cliente"/>
           </div>
         </div>
 		<div class="col-md-3">
@@ -53,7 +53,7 @@
         <div class="col-md-3">
           <div class="form-group">
             <label>Data de Nascimento</label>
-            <input type="date" class="form-control" name="data_nascimento"/>
+            <input type="date" class="form-control" name="data_nascimento" id="data_nascimento"/>
           </div>
         </div>
         <div class="col-md-9">
@@ -69,13 +69,13 @@
         <div class="col-md-3">
           <div class="form-group">
             <label>CPF</label>
-            <input type="text" class="form-control cpf" name="cpf"/>
+            <input type="text" class="form-control cpf" name="cpf" id="cpf"/>
           </div>
         </div>
         <div class="col-md-9">
           <div class="form-group">
             <label>Telefone</label>
-            <input type="number" class="form-control" name="telefone"/>
+            <input type="number" class="form-control" name="telefone" id="telefone"/>
           </div>
         </div>
     </div>
@@ -85,13 +85,13 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Cidade</label>
-            <input type="text" class="form-control" name="cidade"/>
+            <input type="text" class="form-control" name="cidade" id="cidade"/>
           </div>
         </div>
         <div class="col-md-6">
           <div class="form-group">
             <label>E-mail</label>
-            <input type="text" class="form-control" name="email"/>
+            <input type="text" class="form-control" name="email" id="email"/>
           </div>
         </div>
     </div>

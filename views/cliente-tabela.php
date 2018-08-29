@@ -65,11 +65,12 @@
     <!-- codigo javascript -->
 	<script>
 	
-  function setClienteEditar(id, nome, endereco, cep, cpf, telefone, cidade, email, data_nascimento) {			
-    var campoClienteId = document.getElementById("clienteId");
+  function setClienteEditar(id, nome, endereco, cep, cpf, telefone, cidade, email, data_nascimento) {	
+    	
+    var campoClienteId = document.getElementById("clienteid");
     campoClienteId.value = id;
     
-    var campoNome = document.getElementById("nome");
+    var campoNome = document.getElementById("cliente");
     campoNome.value = nome;
 
     var campoEndereco = document.getElementById("endereco");
@@ -78,7 +79,7 @@
     var campoCep = document.getElementById("cep");
     campoCep.value = cep;
 
-    var campoCpf = document.getElementByID("cpf");
+    var campoCpf = document.getElementById("cpf");
     campoCpf.value = cpf;
 
     var campoTelefone = document.getElementById("telefone");
@@ -87,7 +88,7 @@
     var campoCidade = document.getElementById("cidade");
     campoCidade.value = cidade;
 
-    var campoEmail = document.getElemetById("email");
+    var campoEmail = document.getElementById("email");
     campoEmail.value = email;
 
     var campoDataNascimento = document.getElementById("data_nascimento");
