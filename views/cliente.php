@@ -38,7 +38,8 @@
 		<div class="col-md-3">
           <div class="form-group">
             <label>CEP</label>
-            <input type="text" class="form-control" name="cep" id="cep" />			
+            <input type="text" class="form-control cep" name="cep" id="cep" 
+				onblur="buscarEndereco()" />			
           </div>		  		  
         </div>
 		<div class="col-md-1" style="margin-top: 24px;">
@@ -208,6 +209,7 @@
       function aplicarMascaras() {
         $('.cpf').mask('000.000.000-00');        
 		$('.tel').mask('(00) 00000-0000');
+		$('.cep').mask('00.000-000');
       }
 	  
 	  function acertarMascaraTelefone() {
@@ -228,8 +230,10 @@
 	  // função para buscar endereço pelo cep
 	  function buscarEndereco() {
 		var cep = document.getElementById("cep");		  
-		  
-		$.getJSON("https://viacep.com.br/ws/"+ cep.value +"/json/?callback=?", recebeEndereco);
+		var cepSemPonto = cep.value.replace(".", "");
+		var cepOk = cepSemPonto.replace("-", "")
+		
+		$.getJSON("https://viacep.com.br/ws/"+ cepOk +"/json/?callback=?", recebeEndereco);
 	  }
 	  
 	  function recebeEndereco(end) {
