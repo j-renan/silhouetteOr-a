@@ -99,7 +99,7 @@
     <!--adicionando botoes-->
     <div class="row">
       <div class="col-md-2">
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary" id="cadastrarCliente">
           SALVAR <span class="glyphicon glyphicon-plus-sign"></span>
         </button>
       </div>
@@ -157,7 +157,7 @@
 	var botaoCadastrar = document.getElementById("cadastrarCliente");
 				
 	botaoRemover.addEventListener("click", exibirMensagemRemover);
-    //botaoCadastrar.addEventListener("click", exibirMensagemCadastrar);
+  botaoCadastrar.addEventListener("click", exibirMensagemCadastrar);
 		
 	function exibirMensagemRemover() {
 		localStorage.setItem('acaoCliente', 'remover');		
@@ -165,7 +165,7 @@
 
     function exibirMensagemCadastrar() {				
 		
-      var campoClienteId = document.getElementById("clienteId");
+      var campoClienteId = document.getElementById("clienteid");
 	  
       if (campoClienteId.value == "") {
         localStorage.setItem('acaoCliente', 'cadastrar');
