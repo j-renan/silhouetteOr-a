@@ -75,7 +75,8 @@
         <div class="col-md-9">
           <div class="form-group">
             <label>Telefone</label>
-            <input type="number" class="form-control" name="telefone" id="telefone"/>
+            <input type="text" class="form-control tel" name="telefone" id="telefone"
+				onblur="acertarMascaraTelefone()" onfocus="resetMascaraTelefone()"/>
           </div>
         </div>
     </div>
@@ -199,14 +200,30 @@
       mensagem.style.display = "none";
 	  localStorage.removeItem('acaoCliente');
     }
-    </script>
-
-    <script>
+	
+	
+	// codigo que aplica as mascaras nos campos e busca o endereço pelo cep
       $(document).ready(aplicarMascaras);
 
       function aplicarMascaras() {
         $('.cpf').mask('000.000.000-00');        
+		$('.tel').mask('(00) 00000-0000');
       }
+	  
+	  function acertarMascaraTelefone() {
+		  var campoTelefone = document.getElementById('telefone');
+		  var telefoneValor = campoTelefone.value;		  
+		  		  
+		  if (telefoneValor.length == 15) {
+			  $('.tel').mask('(00) 00000-0000');
+		  } else if (telefoneValor.length == 14) {
+			  $('.tel').mask('(00) 0000-0000');
+		  }
+	  }
+	  
+	  function resetMascaraTelefone() {
+		$('.tel').mask('(00) 00000-0000');
+	  }
 	  
 	  // função para buscar endereço pelo cep
 	  function buscarEndereco() {
@@ -219,6 +236,9 @@
 		  console.log('endereco = ', end);
 		  var endereco = document.getElementById('endereco');		  
 		  endereco.value = end.logradouro + ",    " + end.bairro;
+		  
+		  var cidade = document.getElementById('cidade');
+		  cidade.value = end.localidade;
 	  }
 
     </script>

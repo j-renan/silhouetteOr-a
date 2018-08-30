@@ -26,7 +26,13 @@
             <?php               
               for ($i=0; $i < count($listaClientes); $i++) {
 
-                $linha = $listaClientes[$i];         				
+                $linha = $listaClientes[$i];   
+
+				$data = $linha["data_nascimento"];
+
+				$dataArray = explode("-", $data);
+
+				$dataFormatada = $dataArray[2] . "/" . $dataArray[1] . "/" . $dataArray[0];
                 
                 echo "<tr>
                   <td> ". $linha["id"] ." </td>
@@ -37,7 +43,7 @@
                   <td> ". $linha["telefone"] ." </td>
                   <td> ". $linha["cidade"] ." </td>
                   <td> ". $linha["email"] ." </td>
-                  <td> ". $linha["data_nascimento"] ." </td>
+                  <td> ". $dataFormatada ." </td>
                   
                   <td width=\"100px\">
           <button class=\"btn btn-success\" onclick=\"setClienteEditar(".$linha['id'].", '".$linha['nome']."','".$linha['endereco']."',
