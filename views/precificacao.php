@@ -13,7 +13,7 @@
 <?php
 
 include './header.php';
-include "../controller/buscarClientes.php";
+include "../controller/buscarDados.php";
 
 ?>
 
@@ -44,8 +44,12 @@ include "../controller/buscarClientes.php";
                 <div class="form-group">
                     <label>Produto a Precificar</label>
                     <select class="form-control">
-                        <option>Latinha</option>
-                        <option>Caixa Milk</option>
+                        <?php
+                        for ($i=0; $i < count($listaProdutos); $i++){
+                            $linha = $listaProdutos[$i];
+                            echo '<option value="'.$linha["id"].'">'.$linha["produto"].'</option>';
+                        }
+                        ?>
                     </select>
                 </div>
             </div>

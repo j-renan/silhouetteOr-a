@@ -46,6 +46,18 @@ class ProdutoDAO {
         $bd->query($sql); 
         $bd->close();
     }
+
+    public function buscarNomeId()
+    {
+        $conexao = new conexao();
+        $bd = $conexao->conectar();
+
+        $sql = "SELECT id, produto FROM produtos";
+
+        $resultado = $bd->query($sql);
+        $bd->close();
+        return $resultado;
+    }
 }
 
 
