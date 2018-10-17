@@ -1,5 +1,6 @@
 <?php
-class Conexao{
+
+class Conexao {
     public function conectar() {
         // conexão com banco de dados
         $servidor = "localhost";

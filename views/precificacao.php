@@ -13,7 +13,7 @@
 <?php
 
 include './header.php';
-include "../controller/buscarDados.php";
+include "../controller/buscarDadosPrecificacao.php";
 
 ?>
 

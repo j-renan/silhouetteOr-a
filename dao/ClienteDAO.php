@@ -60,20 +60,7 @@ class ClienteDAO
         $bd->close();
 
     }
-
-    // função que busca o id e nome do cliente
-
-    public function buscarNomeId()
-    {
-        $conexao = new conexao();
-        $bd = $conexao->conectar();
-
-        $sql = "SELECT id, nome FROM clientes";
-
-        $resultado = $bd->query($sql);
-        $bd->close();
-        return $resultado;
-    }
+    
 }
 
 
