@@ -29,10 +29,10 @@ include "../controller/buscarDadosPrecificacao.php";
                     <label>Cliente</label>
                     <select class="form-control">
                         <?php
-                            for ($i=0; $i < count($listaClientes); $i++){
-                                $linha = $listaClientes[$i];
-                                echo '<option value="'.$linha["id"].'">'.$linha["nome"].'</option>';
-                            }
+                        for ($i = 0; $i < count($listaClientes); $i++) {
+                            $linha = $listaClientes[$i];
+                            echo '<option value="' . $linha["id"] . '">' . $linha["nome"] . '</option>';
+                        }
                         ?>
 
                     </select>
@@ -44,9 +44,9 @@ include "../controller/buscarDadosPrecificacao.php";
                     <label>Produto a Precificar</label>
                     <select class="form-control">
                         <?php
-                        for ($i=0; $i < count($listaProdutos); $i++){
+                        for ($i = 0; $i < count($listaProdutos); $i++) {
                             $linha = $listaProdutos[$i];
-                            echo '<option value="'.$linha["id"].'">'.$linha["produto"].'</option>';
+                            echo '<option value="' . $linha["id"] . '">' . $linha["produto"] . '</option>';
                         }
                         ?>
                     </select>
@@ -57,7 +57,13 @@ include "../controller/buscarDadosPrecificacao.php";
                 <div class="form-group">
                     <label>Materiais a Utilizar</label>
                     <select class="form-control">
-                        <option>Selecione o Material</option>
+                        <?php
+                        for ($i = 0; $i < count($listaMateriais); $i++) {
+                            $linha = $listaMateriais[$i];
+                            echo '<option value="' . $linha["id"] . '">' . $linha["material"] . '</option>';
+                        }
+                        ?>
+
                     </select>
                 </div>
             </div>

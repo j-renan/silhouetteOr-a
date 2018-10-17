@@ -42,9 +42,22 @@ function buscarClientes($bd) {
 	return $listaClientes;
 }
 
+function buscarMateriais($bd) {
+    $sqlMateriais = "SELECT id, material, preco FROM materiais";
+    $resultadoMateriais = $bd->query($sqlMateriais);
+    $numeroLinha = $resultadoMateriais->num_rows;
+    $listaMateriais = [];
+
+    for ($i=0; $i < $numeroLinha; $i++) {
+        $linha = $resultadoMateriais->fetch_assoc();
+        array_push($listaMateriais, $linha);
+    }
+    return $listaMateriais;
+}
+
 $listaProdutos = buscarProdutos($bd);
 $listaClientes = buscarClientes($bd);
-
+$listaMateriais = buscarMateriais($bd);
 $bd->close();
 
 
