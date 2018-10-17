@@ -14,7 +14,6 @@
 
 include './header.php';
 include "../controller/buscarDadosPrecificacao.php";
-
 ?>
 
 <div class="container">
