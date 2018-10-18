@@ -27,11 +27,11 @@ include "../controller/buscarDadosPrecificacao.php";
             <div class="col-md-2">
                 <div class="form-group">
                     <label>Cliente</label>
-                    <select class="form-control">
+                    <select class="form-control" id="selectCliente">
                         <?php
                         for ($i = 0; $i < count($listaClientes); $i++) {
                             $linha = $listaClientes[$i];
-                            echo '<option value="' . $linha["id"] . '">' . $linha["nome"] . '</option>';
+                            echo '<option value="' . $linha["nome"] . '">' . $linha["nome"] . '</option>';
                         }
                         ?>
 
@@ -42,11 +42,11 @@ include "../controller/buscarDadosPrecificacao.php";
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Produto a Precificar</label>
-                    <select class="form-control">
+                    <select class="form-control" id="selectProduto">
                         <?php
                         for ($i = 0; $i < count($listaProdutos); $i++) {
                             $linha = $listaProdutos[$i];
-                            echo '<option value="' . $linha["id"] . '">' . $linha["produto"] . '</option>';
+                            echo '<option value="' . $linha["preco"] . '">' . $linha["produto"] . '</option>';
                         }
                         ?>
                     </select>
@@ -60,8 +60,7 @@ include "../controller/buscarDadosPrecificacao.php";
                         <?php
                         for ($i = 0; $i < count($listaMateriais); $i++) {
                             $linha = $listaMateriais[$i];
-                            $idComposto = $linha["id"] . "|" . $linha["preco"];
-                            echo '<option value="' . $idComposto . '">' . $linha["material"] . '</option>';
+                            echo '<option value="' . $linha["material"] . '">' . $linha["material"] . '</option>';
                         }
                         ?>
 
@@ -80,7 +79,7 @@ include "../controller/buscarDadosPrecificacao.php";
             <div class="col-md-1">
                 <div class="form-group">
                     <label>Quantidade</label>
-                    <input type="number" class="form-control" name="id"/>
+                    <input type="number" class="form-control" name="qtde" id="qtde"/>
                 </div>
             </div>
         </div>
@@ -88,12 +87,34 @@ include "../controller/buscarDadosPrecificacao.php";
         <!--adicionando botoes-->
         <div class="row">
             <div class="col-md-2">
-                <button type="submit" class="btn btn-primary">
+                <a href="#"  class="btn btn-primary" onclick="adicionarDados()">
                     CALCULAR PRODUTO <span class="glyphicon glyphicon-usd"></span>
-                </button>
+                </a>
             </div>
         </div>
     </form>
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-condensed table-bordered table-hover table-striped">
+                <thead>
+                <tr>
+                    <td>CLIENTE</td>
+                    <td>PRODUTO</td>
+                    <td>MATERIAL</td>
+                    <td>PREÇO</td>
+                    <td>QUANTIDADE</td>
+                    <td>TOTAL</td>
+                    <td>EXCLUIR</td>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 
 
     <!--incluindo arquivos necessarios para a biblioteca-->
@@ -106,9 +127,16 @@ include "../controller/buscarDadosPrecificacao.php";
         precoInput.value = listaMateriais[0].preco   
 
         function setarPreco() {
-            const selectMaterial = document.getElementById("selectMaterial");             
-            const precoSeparado = selectMaterial.value.split("|")[1];
-            precoInput.value = precoSeparado
+            const selectMaterial = document.getElementById("selectMaterial");
+            precoInput.value = selectMaterial.value
+        }
+        function adicionarDados() {
+            const selectCliente = document.getElementById("selectCliente").value;
+            const selectProduto = document.getElementById("selectProduto").value;
+            const selectMaterial = document.getElementById("selectMaterial").value;
+            const preco = document.getElementById("preco").value;
+            const qtde = document.getElementById("qtde").value;
+            console.log(selectCliente, selectProduto, selectMaterial, preco, qtde)
         }
     </script>
 </body>
