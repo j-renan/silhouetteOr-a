@@ -58,6 +58,7 @@ function buscarMateriais($bd) {
 $listaProdutos = buscarProdutos($bd);
 $listaClientes = buscarClientes($bd);
 $listaMateriais = buscarMateriais($bd);
+$listaMateriaisJS = json_encode($listaMateriais);
 $bd->close();
 
 

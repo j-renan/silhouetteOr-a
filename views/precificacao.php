@@ -39,7 +39,7 @@ include "../controller/buscarDadosPrecificacao.php";
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label>Produto a Precificar</label>
                     <select class="form-control">
@@ -53,14 +53,15 @@ include "../controller/buscarDadosPrecificacao.php";
                 </div>
             </div>
 
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <div class="form-group">
                     <label>Materiais a Utilizar</label>
-                    <select class="form-control">
+                    <select class="form-control" id="selectMaterial" onchange="setarPreco()">
                         <?php
                         for ($i = 0; $i < count($listaMateriais); $i++) {
                             $linha = $listaMateriais[$i];
-                            echo '<option value="' . $linha["id"] . '">' . $linha["material"] . '</option>';
+                            $idComposto = $linha["id"] . "|" . $linha["preco"];
+                            echo '<option value="' . $idComposto . '">' . $linha["material"] . '</option>';
                         }
                         ?>
 
@@ -71,12 +72,12 @@ include "../controller/buscarDadosPrecificacao.php";
             <div class="col-md-2">
                 <div class="form-group">
                     <label>Preço unitário R$</label>
-                    <input type="text" class="form-control" name="id"/>
+                    <input type="text" class="form-control" name="preco" id="preco" />
                 </div>
             </div>
 
 
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <div class="form-group">
                     <label>Quantidade</label>
                     <input type="number" class="form-control" name="id"/>
@@ -97,16 +98,18 @@ include "../controller/buscarDadosPrecificacao.php";
 
     <!--incluindo arquivos necessarios para a biblioteca-->
     <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>
-    <script src="../assets/js/jquery.mask.js"></script>
+    <script src="../assets/js/bootstrap.min.js"></script>    
 
     <script>
-        $(document).ready(aplicarMascaras);
+        const listaMateriais = <?php echo $listaMateriaisJS ?>;
+        const precoInput = document.getElementById("preco");        
+        precoInput.value = listaMateriais[0].preco   
 
-        function aplicarMascaras() {
-            $('.cpf').mask('000.000.000-00');
+        function setarPreco() {
+            const selectMaterial = document.getElementById("selectMaterial");             
+            const precoSeparado = selectMaterial.value.split("|")[1];
+            precoInput.value = precoSeparado
         }
-
     </script>
 </body>
 </html>
