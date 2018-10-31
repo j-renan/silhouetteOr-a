@@ -26,6 +26,12 @@ include "../controller/buscarDadosPrecificacao.php";
         <div class="row">
             <div class="col-md-2">
                 <div class="form-group">
+                    <label>Data</label>
+                    <input type="date" class="form-control" name="data" id="data" value="<?php echo date('Y-m-d') ?>"/>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
                     <label>Cliente</label>
                     <select class="form-control" id="selectCliente">
                         <?php
@@ -41,6 +47,15 @@ include "../controller/buscarDadosPrecificacao.php";
 
             <div class="col-md-3">
                 <div class="form-group">
+                    <label>Criança</label>
+                    <input type="text" class="form-control" id="crianca" name="crianca">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
                     <label>Produto a Precificar</label>
                     <select class="form-control" id="selectProduto">
                         <?php
@@ -52,7 +67,9 @@ include "../controller/buscarDadosPrecificacao.php";
                     </select>
                 </div>
             </div>
+        </div>
 
+        <div class="row">
             <div class="col-md-3">
                 <div class="form-group">
                     <label>Materiais a Utilizar</label>
@@ -60,7 +77,7 @@ include "../controller/buscarDadosPrecificacao.php";
                         <?php
                         for ($i = 0; $i < count($listaMateriais); $i++) {
                             $linha = $listaMateriais[$i];
-                            $materialPreco = $linha["material"]."|".$linha["preco"];
+                            $materialPreco = $linha["material"] . "|" . $linha["preco"];
                             echo '<option value="' . $materialPreco . '">' . $linha["material"] . '</option>';
                         }
                         ?>
@@ -71,36 +88,75 @@ include "../controller/buscarDadosPrecificacao.php";
 
             <div class="col-md-2">
                 <div class="form-group">
-                    <label>Preço custo R$</label>
-                    <input type="text" class="form-control" name="preco" id="preco" />
+                    <label>Preço Unitário R$</label>
+                    <input type="text" class="form-control" name="preco" id="preco"/>
                 </div>
             </div>
-
             <div class="col-md-2">
-                <div class="form-group">
-                    <label>Preço venda R$</label>
-                    <input type="text" class="form-control" name="preco" id="preco" />
-                </div>
+                <a href="#" class="btn btn-primary" onclick="adicionarDados()" style="margin-top: 24px">
+                    ADICIONAR MATERIAL <span class="glyphicon glyphicon-ok"></span>
+                </a>
             </div>
-
-
-            <div class="col-md-1">
-                <div class="form-group">
-                    <label>Quantidade</label>
-                    <input type="number" class="form-control" name="qtde" id="qtde"/>
-                </div>
-            </div>
-        </div>
-
-        <!--adicionando botoes-->
-        <div class="row">
             <div class="col-md-2">
-                <a href="#"  class="btn btn-primary" onclick="adicionarDados()">
-                    CALCULAR PRODUTO <span class="glyphicon glyphicon-usd"></span>
+                <a href="#" class="btn btn-success" data-toggle="modal" data-target="#janelaEnviarOrcamento"
+                   style="margin-top: 24px; margin-left: 28px; display: none;" id="btnEnviarOrcamento">
+                    ENVIAR PARA ORÇAMENTO <span class="glyphicon glyphicon-ok"></span>
                 </a>
             </div>
         </div>
     </form>
+
+    <!-- janela de confirmação para enviar para orçamento -->
+    <div class="modal fade" id="janelaEnviarOrcamento" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Enviar Produto Para Orçamento</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4>Total da Unidade do Produto <span id="produto"></span> = R$ <span id="total"></span></h4>
+                            </div>
+                        </div>
+                        <br/>
+
+                        <div class="row">
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Quantidade</label>
+                                    <input type="number" id="qtde" name="qtde" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Total</label>
+                                    <input type="number" id="total" name="total" class="form-control" readonly>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <a href="#" class="btn btn-primary" onclick="calcular()"
+                                   style="margin-top: 24px; margin-left: 28px;">
+                                    CALCULAR <span class="glyphicon glyphicon-ok"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" id="removerMaterial"
+                            onclick="">Enviar Para Orçamento
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <br>
     <br>
     <div class="row">
@@ -108,15 +164,9 @@ include "../controller/buscarDadosPrecificacao.php";
             <table id="tabela" class="table table-condensed table-bordered table-hover table-striped">
                 <thead>
                 <tr>
-                    <td>CLIENTE</td>
                     <td>PRODUTO</td>
                     <td>MATERIAL</td>
-                    <td>PREÇO CUSTO</td>
-                    <td>PREÇO VENDA</td>
-                    <td>QUANTIDADE</td>
-                    <td>TOTAL CUSTO</td>
-                    <td>TOTAL VENDA</td>
-                    <td>LUCRO</td>
+                    <td>PREÇO UNITÁRIO</td>
                     <td>EXCLUIR</td>
                 </tr>
                 </thead>
@@ -130,12 +180,15 @@ include "../controller/buscarDadosPrecificacao.php";
 
     <!--incluindo arquivos necessarios para a biblioteca-->
     <script src="../assets/js/jquery.min.js"></script>
-    <script src="../assets/js/bootstrap.min.js"></script>    
+    <script src="../assets/js/bootstrap.min.js"></script>
 
     <script>
         const listaMateriais = <?php echo $listaMateriaisJS ?>;
-        const precoInput = document.getElementById("preco");        
+        const precoInput = document.getElementById("preco");
         precoInput.value = listaMateriais[0].preco
+
+        const listaMateriaisAdicionados = []
+        const btnEnviarOrcamento = document.getElementById("btnEnviarOrcamento")
 
         function setarPreco() {
             const selectMaterial = document.getElementById("selectMaterial");
@@ -144,48 +197,62 @@ include "../controller/buscarDadosPrecificacao.php";
         }
 
         function adicionarDados() {
-            const selectCliente = document.getElementById("selectCliente").value;
             const selectProduto = document.getElementById("selectProduto").value;
             const selectMaterial = document.getElementById("selectMaterial").value;
             const preco = document.getElementById("preco").value;
-            const qtde = document.getElementById("qtde").value;
-
             const nomeMaterial = selectMaterial.split("|")[0]
 
-            criarLinha(selectCliente, selectProduto, nomeMaterial, preco, qtde)
+            criarLinha(selectProduto, nomeMaterial, preco)
         }
 
-        function criarLinha(cliente, produto, material, preco, quantidade) {
+        function criarLinha(produto, material, preco) {
 
             const corpo = document.getElementById("corpo")
             const linha = document.createElement("tr")
 
-            const colCliente = document.createElement("td")
             const colProduto = document.createElement("td")
             const colMaterial = document.createElement("td")
             const colPreco = document.createElement("td")
-            const colQuantidade = document.createElement("td")
 
-            const cli = document.createTextNode(cliente)
             const pro = document.createTextNode(produto)
             const mat = document.createTextNode(material)
             const pre = document.createTextNode(preco)
-            const qua = document.createTextNode(quantidade)
 
-            colCliente.appendChild(cli)
             colProduto.appendChild(pro)
             colMaterial.appendChild(mat)
             colPreco.appendChild(pre)
-            colQuantidade.appendChild(qua)
 
-            linha.appendChild(colCliente)
             linha.appendChild(colProduto)
             linha.appendChild(colMaterial)
             linha.appendChild(colPreco)
-            linha.appendChild(colQuantidade)
-
 
             corpo.appendChild(linha)
+
+            // monta o obj que será salvo no banco de dados
+            const obj = {
+                produto: produto,
+                material: material,
+                preco: parseFloat(preco)
+            }
+
+            listaMateriaisAdicionados.push(obj)
+
+            if (listaMateriaisAdicionados.length > 0) {
+                btnEnviarOrcamento.style.display = 'inline-block'
+            }
+
+            let totalValorUnitarioProduto = 0
+            for(let i=0; i < listaMateriaisAdicionados.length; i++) {
+                const linha = listaMateriaisAdicionados[i]
+                totalValorUnitarioProduto = totalValorUnitarioProduto + linha.preco
+                //totalValorUnitarioProduto += linha.preco
+            }
+
+            const spanTotal=document.getElementById("total")
+            spanTotal.textContent = totalValorUnitarioProduto
+
+            const spanProduto=document.getElementById("produto")
+            spanProduto.textContent = produto
         }
     </script>
 </body>
