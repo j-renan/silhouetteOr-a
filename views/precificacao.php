@@ -134,11 +134,11 @@ include "../controller/buscarDadosPrecificacao.php";
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Total</label>
-                                    <input type="number" id="total" name="total" class="form-control" readonly>
+                                    <input type="number" id="totalQtde" name="total" class="form-control" readonly>
                                 </div>
                             </div>
                             <div class="col-md-4">
-                                <a href="#" class="btn btn-primary" onclick="calcular()"
+                                <a class="btn btn-primary" onclick="calcular()"
                                    style="margin-top: 24px; margin-left: 28px;">
                                     CALCULAR <span class="glyphicon glyphicon-ok"></span>
                                 </a>
@@ -181,79 +181,12 @@ include "../controller/buscarDadosPrecificacao.php";
     <!--incluindo arquivos necessarios para a biblioteca-->
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="../assets/js/precificacao.js"></script>
+
 
     <script>
-        const listaMateriais = <?php echo $listaMateriaisJS ?>;
-        const precoInput = document.getElementById("preco");
-        precoInput.value = listaMateriais[0].preco
-
-        const listaMateriaisAdicionados = []
-        const btnEnviarOrcamento = document.getElementById("btnEnviarOrcamento")
-
-        function setarPreco() {
-            const selectMaterial = document.getElementById("selectMaterial");
-            const dados = selectMaterial.value.split("|")
-            precoInput.value = dados[1]
-        }
-
-        function adicionarDados() {
-            const selectProduto = document.getElementById("selectProduto").value;
-            const selectMaterial = document.getElementById("selectMaterial").value;
-            const preco = document.getElementById("preco").value;
-            const nomeMaterial = selectMaterial.split("|")[0]
-
-            criarLinha(selectProduto, nomeMaterial, preco)
-        }
-
-        function criarLinha(produto, material, preco) {
-
-            const corpo = document.getElementById("corpo")
-            const linha = document.createElement("tr")
-
-            const colProduto = document.createElement("td")
-            const colMaterial = document.createElement("td")
-            const colPreco = document.createElement("td")
-
-            const pro = document.createTextNode(produto)
-            const mat = document.createTextNode(material)
-            const pre = document.createTextNode(preco)
-
-            colProduto.appendChild(pro)
-            colMaterial.appendChild(mat)
-            colPreco.appendChild(pre)
-
-            linha.appendChild(colProduto)
-            linha.appendChild(colMaterial)
-            linha.appendChild(colPreco)
-
-            corpo.appendChild(linha)
-
-            // monta o obj que será salvo no banco de dados
-            const obj = {
-                produto: produto,
-                material: material,
-                preco: parseFloat(preco)
-            }
-
-            listaMateriaisAdicionados.push(obj)
-
-            if (listaMateriaisAdicionados.length > 0) {
-                btnEnviarOrcamento.style.display = 'inline-block'
-            }
-
-            let totalValorUnitarioProduto = 0
-            for(let i=0; i < listaMateriaisAdicionados.length; i++) {
-                const linha = listaMateriaisAdicionados[i]
-                totalValorUnitarioProduto = totalValorUnitarioProduto + linha.preco
-                //totalValorUnitarioProduto += linha.preco
-            }
-
-            const spanTotal=document.getElementById("total")
-            spanTotal.textContent = totalValorUnitarioProduto
-
-            const spanProduto=document.getElementById("produto")
-            spanProduto.textContent = produto
-        }
+        const listaMateriaisPhp = <?php echo $listaMateriaisJS ?>;
+        setListaMateriais(listaMateriaisPhp)
     </script>
 </body>
 </html>
