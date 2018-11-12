@@ -61,7 +61,8 @@ function criarLinha(produto, material, preco) {
     const obj = {
         produto: produto,
         material: material,
-        preco: parseFloat(preco)
+        preco: parseFloat(preco),
+        ativo: true
     }
 
     listaMateriaisAdicionados.push(obj)
@@ -73,7 +74,6 @@ function criarLinha(produto, material, preco) {
     let totalValorUnitarioProduto = 0
     for(let i=0; i < listaMateriaisAdicionados.length; i++) {
         const linha = listaMateriaisAdicionados[i]
-        console.log(linha)
         totalValorUnitarioProduto = totalValorUnitarioProduto + linha.preco
         //totalValorUnitarioProduto += linha.preco
     }
@@ -96,7 +96,7 @@ function criarBotao(indice) {
     botao.onclick = function () {
         const linhaRemover = document.getElementsByTagName("tr")[indice]
         linhaRemover.style.display = "none"
-
+        removerItemArray(indice)
     }
     botao.appendChild(textoBotao)
     return botao
@@ -109,4 +109,25 @@ function calcular() {
     document.getElementById("totalQtde").value = total
     console.log(total)
 
+}
+
+function removerItemArray(indice) {
+
+    let produtoAtivo = false
+    for (let i = 0; i < listaMateriaisAdicionados.length; i++){
+        const linha = listaMateriaisAdicionados[i]
+        if ((indice - 1) === i){
+            linha.ativo = false
+        }
+        if (linha.ativo === true){
+            produtoAtivo = true
+        }
+    }
+
+    if (produtoAtivo === true) {
+        btnEnviarOrcamento.style.display = 'inline-block'
+    }else {
+        btnEnviarOrcamento.style.display = 'none'
+    }
+console.log(listaMateriaisAdicionados)
 }
