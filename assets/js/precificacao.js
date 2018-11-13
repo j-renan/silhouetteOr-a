@@ -1,8 +1,21 @@
-let totalSoma = 0
+
 let listaMateriais = []
 const precoInput = document.getElementById("preco");
 let indice = 1
+let valorUnitarioTotal = 0
 
+//qdo envia para orçamento culcula total dos produtos ativos
+document.getElementById("btnEnviarOrcamento").addEventListener('click',function () {
+
+    listaMateriaisAdicionados.map(function (linha) {
+        if (linha.ativo === true){
+            valorUnitarioTotal = valorUnitarioTotal + linha.preco
+        }
+    })
+    const spanTotal=document.getElementById("total")
+    spanTotal.textContent = parseFloat(valorUnitarioTotal).toFixed(2)
+
+})
 
 function setListaMateriais(lista) {
     listaMateriais = lista
@@ -74,13 +87,13 @@ function criarLinha(produto, material, preco) {
     let totalValorUnitarioProduto = 0
     for(let i=0; i < listaMateriaisAdicionados.length; i++) {
         const linha = listaMateriaisAdicionados[i]
-        totalValorUnitarioProduto = totalValorUnitarioProduto + linha.preco
+            totalValorUnitarioProduto = totalValorUnitarioProduto + linha.preco
+
         //totalValorUnitarioProduto += linha.preco
     }
-    totalSoma = totalValorUnitarioProduto
 
-    const spanTotal=document.getElementById("total")
-    spanTotal.textContent = parseFloat(totalValorUnitarioProduto).toFixed(2)
+
+
 
     const spanProduto=document.getElementById("produto")
     spanProduto.textContent = produto
@@ -105,9 +118,8 @@ function criarBotao(indice) {
 
 function calcular() {
     const qtde = document.getElementById("qtde").value
-    const total = Number(qtde) * totalSoma
-    document.getElementById("totalQtde").value = total
-    console.log(total)
+    const total = Number(qtde) * valorUnitarioTotal
+    document.getElementById("totalQtde").value = parseFloat(total).toFixed(2)
 
 }
 
