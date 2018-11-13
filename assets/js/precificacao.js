@@ -7,6 +7,7 @@ let valorUnitarioTotal = 0
 //qdo envia para orçamento culcula total dos produtos ativos
 document.getElementById("btnEnviarOrcamento").addEventListener('click',function () {
 
+    valorUnitarioTotal = 0
     listaMateriaisAdicionados.map(function (linha) {
         if (linha.ativo === true){
             valorUnitarioTotal = valorUnitarioTotal + linha.preco
@@ -141,5 +142,5 @@ function removerItemArray(indice) {
     }else {
         btnEnviarOrcamento.style.display = 'none'
     }
-console.log(listaMateriaisAdicionados)
+
 }

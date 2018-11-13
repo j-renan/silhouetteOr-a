@@ -128,7 +128,7 @@ include "../controller/buscarDadosPrecificacao.php";
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>Quantidade</label>
-                                    <input type="number" id="qtde" name="qtde" class="form-control">
+                                    <input type="number" id="qtde" name="qtde" min="1" value="1" class="form-control">
                                 </div>
                             </div>
                             <div class="col-md-2">
