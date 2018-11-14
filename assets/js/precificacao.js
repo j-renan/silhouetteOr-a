@@ -119,8 +119,13 @@ function criarBotao(indice) {
 
 function calcular() {
     const qtde = document.getElementById("qtde").value
-    const total = Number(qtde) * valorUnitarioTotal
-    document.getElementById("totalQtde").value = parseFloat(total).toFixed(2)
+    const lucro = document.getElementById("lucro").value
+    const total = (Number(qtde) * valorUnitarioTotal)
+    let porcentagem = total * (lucro/100)
+    console.log(total,porcentagem)
+    porcentagem = porcentagem + total
+    console.log(porcentagem)
+    document.getElementById("totalQtde").value = parseFloat(porcentagem).toFixed(2)
 
 }
 

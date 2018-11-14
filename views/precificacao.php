@@ -133,24 +133,26 @@ include "../controller/buscarDadosPrecificacao.php";
                             </div>
                             <div class="col-md-2">
                                 <div class="form-group">
+                                    <label>% Lucro</label>
+                                    <input type="number" id="lucro" name="lucro" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
                                     <label>Total</label>
                                     <input type="number" id="totalQtde" name="total" class="form-control" readonly>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <a class="btn btn-primary" onclick="calcular()"
-                                   style="margin-top: 24px; margin-left: 28px;">
-                                    CALCULAR <span class="glyphicon glyphicon-ok"></span>
-                                </a>
                             </div>
                         </div>
                     </div>
 
                 </div>
                 <div class="modal-footer">
+                    <a class="btn btn-primary" onclick="calcular()" style="float: left">
+                        CALCULAR <span class="glyphicon glyphicon-ok"></span>
+                    </a>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success" id="removerMaterial"
-                            onclick="">Enviar Para Orçamento
+                    <button type="button" class="btn btn-success" onclick="">Enviar Para Orçamento
                     </button>
                 </div>
             </div>

@@ -16,14 +16,16 @@
     <session id="1748802508">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.376" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.71" value="1" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.open.time.93" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -40,14 +42,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="958" />
-          <entry key="php" value="4619" />
+          <entry key="js" value="1192" />
+          <entry key="php" value="4677" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="958" />
-          <entry key="PHP" value="4619" />
+          <entry key="JavaScript" value="1192" />
+          <entry key="PHP" value="4677" />
         </counts>
       </usages-collector>
     </session>
@@ -57,11 +59,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/precificacao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="130" column="86" selection-start-line="130" selection-start-column="86" selection-end-line="130" selection-end-column="86" />
-              <folding>
-                <element signature="n#style#0;n#a#0;n#div#3;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="223">
+              <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
             </state>
           </provider>
         </entry>
@@ -69,8 +68,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/precificacao.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            <state relative-caret-position="312">
+              <caret line="127" column="83" selection-start-line="127" selection-start-column="83" selection-end-line="127" selection-end-column="83" />
+              <folding>
+                <element signature="n#!!block;n#setListaMateriais#0" />
+                <element signature="n#!!block;n#setarPreco#0" />
+                <element signature="n#!!block;n#adicionarDados#0" />
+                <element signature="n#!!block;n#criarLinha#0" />
+                <element signature="n#!!block;n#criarBotao#0" />
+                <element signature="n#!!block;n#removerItemArray#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -115,6 +122,8 @@
     <findStrings>
       <find>selectProduto</find>
       <find>modal</find>
+      <find>totalQtde</find>
+      <find>calcular</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,46 +161,7 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
-              <item name="assets" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
-              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -226,11 +196,13 @@
       <workItem from="1540939433223" duration="5516000" />
       <workItem from="1541363935576" duration="597000" />
       <workItem from="1542060478816" duration="6998000" />
+      <workItem from="1542146933617" duration="2908000" />
+      <workItem from="1542153537049" duration="75000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26259000" />
+    <option name="totallyTimeSpent" value="29443000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -315,18 +287,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/precificacao.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+        <state relative-caret-position="312">
+          <caret line="127" column="83" selection-start-line="127" selection-start-column="83" selection-end-line="127" selection-end-column="83" />
+          <folding>
+            <element signature="n#!!block;n#setListaMateriais#0" />
+            <element signature="n#!!block;n#setarPreco#0" />
+            <element signature="n#!!block;n#adicionarDados#0" />
+            <element signature="n#!!block;n#criarLinha#0" />
+            <element signature="n#!!block;n#criarBotao#0" />
+            <element signature="n#!!block;n#removerItemArray#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/precificacao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="130" column="86" selection-start-line="130" selection-start-column="86" selection-end-line="130" selection-end-column="86" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#3;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="223">
+          <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
         </state>
       </provider>
     </entry>
