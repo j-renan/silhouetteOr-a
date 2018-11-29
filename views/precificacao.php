@@ -37,7 +37,7 @@ include "../controller/buscarDadosPrecificacao.php";
                         <?php
                         for ($i = 0; $i < count($listaClientes); $i++) {
                             $linha = $listaClientes[$i];
-                            echo '<option value="' . $linha["nome"] . '">' . $linha["nome"] . '</option>';
+                            echo '<option value="' . $linha["id"] . '">' . $linha["nome"] . '</option>';
                         }
                         ?>
 
@@ -61,7 +61,7 @@ include "../controller/buscarDadosPrecificacao.php";
                         <?php
                         for ($i = 0; $i < count($listaProdutos); $i++) {
                             $linha = $listaProdutos[$i];
-                            echo '<option value="' . $linha["produto"] . '">' . $linha["produto"] . '</option>';
+                            echo '<option value="' . $linha["id"] . '">' . $linha["produto"] . '</option>';
                         }
                         ?>
                     </select>
@@ -77,7 +77,7 @@ include "../controller/buscarDadosPrecificacao.php";
                         <?php
                         for ($i = 0; $i < count($listaMateriais); $i++) {
                             $linha = $listaMateriais[$i];
-                            $materialPreco = $linha["material"] . "|" . $linha["preco"];
+                            $materialPreco = $linha["material"] . "|" . $linha["preco"] . "|" . $linha["id"];
                             echo '<option value="' . $materialPreco . '">' . $linha["material"] . '</option>';
                         }
                         ?>
@@ -152,7 +152,7 @@ include "../controller/buscarDadosPrecificacao.php";
                         CALCULAR <span class="glyphicon glyphicon-ok"></span>
                     </a>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success" onclick="">Enviar Para Orçamento
+                    <button type="button" class="btn btn-success" onclick="salvarDados()">Enviar Para Orçamento
                     </button>
                 </div>
             </div>
@@ -184,6 +184,7 @@ include "../controller/buscarDadosPrecificacao.php";
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
     <script src="../assets/js/precificacao.js"></script>
+    <script src="../assets/js/salvarPrecificacao.js"></script>
 
 
     <script>

@@ -34,7 +34,7 @@ function setarPreco() {
 }
 
 function adicionarDados() {
-    const selectProduto = document.getElementById("selectProduto").value;
+    const selectProduto = document.getElementById("selectProduto").textContent;
     const selectMaterial = document.getElementById("selectMaterial").value;
     const preco = document.getElementById("preco").value;
     const nomeMaterial = selectMaterial.split("|")[0]
@@ -122,9 +122,9 @@ function calcular() {
     const lucro = document.getElementById("lucro").value
     const total = (Number(qtde) * valorUnitarioTotal)
     let porcentagem = total * (lucro/100)
-    console.log(total,porcentagem)
+
     porcentagem = porcentagem + total
-    console.log(porcentagem)
+
     document.getElementById("totalQtde").value = parseFloat(porcentagem).toFixed(2)
 
 }

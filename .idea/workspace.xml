@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94b35422-2367-4b6a-a18a-1b81cf1201d9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/js/salvarPrecificacao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controller/orcamento-ctrl.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dao/OrcamentoDAO.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/model/Orcamento.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/precificacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/precificacao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/precificacao.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/precificacao.php" afterDir="false" />
@@ -16,86 +20,95 @@
     <session id="1748802508">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="9" />
+          <entry key="project.open.time.24" value="1" />
           <entry key="project.open.time.36" value="1" />
           <entry key="project.open.time.376" value="1" />
           <entry key="project.open.time.42" value="1" />
           <entry key="project.open.time.44" value="1" />
+          <entry key="project.open.time.45" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.71" value="1" />
           <entry key="project.open.time.93" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="1" />
-          <entry key="php" value="17" />
+          <entry key="js" value="2" />
+          <entry key="php" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="1" />
-          <entry key="PHP" value="17" />
+          <entry key="JavaScript" value="2" />
+          <entry key="PHP" value="27" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="1192" />
-          <entry key="php" value="4677" />
+          <entry key="js" value="2029" />
+          <entry key="php" value="5156" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="1192" />
-          <entry key="PHP" value="4677" />
+          <entry key="JavaScript" value="2029" />
+          <entry key="PHP" value="5150" />
+          <entry key="SQL" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.php.new.class">
+        <counts>
+          <entry key="PHP Class.type" value="2" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/precificacao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
+            <state relative-caret-position="4425">
+              <caret line="186" column="51" selection-start-line="186" selection-start-column="51" selection-end-line="186" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/js/precificacao.js">
+        <entry file="file://$PROJECT_DIR$/controller/buscarDadosPrecificacao.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="127" column="83" selection-start-line="127" selection-start-column="83" selection-end-line="127" selection-end-column="83" />
-              <folding>
-                <element signature="n#!!block;n#setListaMateriais#0" />
-                <element signature="n#!!block;n#setarPreco#0" />
-                <element signature="n#!!block;n#adicionarDados#0" />
-                <element signature="n#!!block;n#criarLinha#0" />
-                <element signature="n#!!block;n#criarBotao#0" />
-                <element signature="n#!!block;n#removerItemArray#0" />
-              </folding>
+            <state relative-caret-position="710">
+              <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/assets/js/salvarPrecificacao.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/material-tabela.php">
+        <entry file="file://$PROJECT_DIR$/controller/cliente-ctrl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="36" column="74" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="74" />
+            <state>
+              <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/material.php">
+        <entry file="file://$PROJECT_DIR$/controller/orcamento-ctrl.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2225">
-              <caret line="89" column="6" selection-start-line="70" selection-start-column="4" selection-end-line="89" selection-end-column="6" />
+            <state relative-caret-position="250">
+              <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -103,8 +116,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/cliente.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1450">
-              <caret line="58" column="14" selection-start-line="53" selection-start-column="8" selection-end-line="58" selection-end-column="14" />
+            <state relative-caret-position="300">
+              <caret line="18" column="54" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assets/js/precificacao.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="237">
+              <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
+              <folding>
+                <element signature="n#!!block;n#setListaMateriais#0" />
+                <element signature="n#!!block;n#setarPreco#0" />
+                <element signature="n#!!block;n#criarLinha#0" />
+                <element signature="n#!!block;n#criarBotao#0" />
+                <element signature="n#!!block;n#removerItemArray#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,8 +166,13 @@
         <option value="$PROJECT_DIR$/dao/ProdutoDAO.php" />
         <option value="$PROJECT_DIR$/controller/buscarDados.php" />
         <option value="$PROJECT_DIR$/controller/buscarDadosPrecificacao.php" />
+        <option value="$PROJECT_DIR$/assets/js/salvarPrecicacao.js" />
         <option value="$PROJECT_DIR$/assets/js/precificacao.js" />
         <option value="$PROJECT_DIR$/views/precificacao.php" />
+        <option value="$PROJECT_DIR$/model/Orcamento.php" />
+        <option value="$PROJECT_DIR$/dao/OrcamentoDAO.php" />
+        <option value="$PROJECT_DIR$/controller/orcamento-ctrl.php" />
+        <option value="$PROJECT_DIR$/assets/js/salvarPrecificacao.js" />
       </list>
     </option>
   </component>
@@ -161,12 +195,56 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projeto-silhouette-orca" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto-silhouette-orca" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.build" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -197,18 +275,20 @@
       <workItem from="1541363935576" duration="597000" />
       <workItem from="1542060478816" duration="6998000" />
       <workItem from="1542146933617" duration="2908000" />
-      <workItem from="1542153537049" duration="75000" />
+      <workItem from="1542153537049" duration="409000" />
+      <workItem from="1543442536804" duration="715000" />
+      <workItem from="1543445377187" duration="4582000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29443000" />
+    <option name="totallyTimeSpent" value="35074000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.14750378" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20347957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -244,13 +324,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/buscarDados.php" />
-    <entry file="file://$PROJECT_DIR$/dao/ClienteDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="75" column="5" selection-start-line="65" selection-start-column="4" selection-end-line="75" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/material-lista.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -259,40 +332,72 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/buscarDadosPrecificacao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="14" />
+        <state relative-caret-position="710">
+          <caret line="34" column="24" lean-forward="true" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/material-tabela.php">
+    <entry file="file://$PROJECT_DIR$/model/Cliente.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="36" column="74" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="74" />
+        <state relative-caret-position="-1275" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Orcamento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1712">
+          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/ClienteDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="66" column="2" lean-forward="true" selection-start-line="65" selection-end-line="66" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dao/OrcamentoDAO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="17" column="108" selection-start-line="17" selection-start-column="108" selection-end-line="17" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/cliente-ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="6" column="39" lean-forward="true" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/orcamento-ctrl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="58" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/material.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2225">
+        <state relative-caret-position="512">
           <caret line="89" column="6" selection-start-line="70" selection-start-column="4" selection-end-line="89" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/cliente.php">
+    <entry file="file://$PROJECT_DIR$/views/material-tabela.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1450">
-          <caret line="58" column="14" selection-start-line="53" selection-start-column="8" selection-end-line="58" selection-end-column="14" />
+        <state relative-caret-position="512">
+          <caret line="36" column="74" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="74" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/precificacao.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="127" column="83" selection-start-line="127" selection-start-column="83" selection-end-line="127" selection-end-column="83" />
+        <state relative-caret-position="237">
+          <caret line="124" lean-forward="true" selection-start-line="124" selection-end-line="124" />
           <folding>
             <element signature="n#!!block;n#setListaMateriais#0" />
             <element signature="n#!!block;n#setarPreco#0" />
-            <element signature="n#!!block;n#adicionarDados#0" />
             <element signature="n#!!block;n#criarLinha#0" />
             <element signature="n#!!block;n#criarBotao#0" />
             <element signature="n#!!block;n#removerItemArray#0" />
@@ -302,8 +407,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/precificacao.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
+        <state relative-caret-position="4425">
+          <caret line="186" column="51" selection-start-line="186" selection-start-column="51" selection-end-line="186" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/cliente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="18" column="54" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/js/salvarPrecificacao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
         </state>
       </provider>
     </entry>
