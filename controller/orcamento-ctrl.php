@@ -9,11 +9,17 @@
 include '../model/Orcamento.php';
 include '../dao/OrcamentoDAO.php';
 
-// variaveis do orcamento para salvar
-$cliente_id = $_POST["clienteId"];
-echo $cliente_id;
+$dados = file_get_contents("php://input");
+$json_decode = json_decode($dados);
+
+//variaveis do orcamento para salvar
+//print_r($json_decode);
+$cliente_id = $json_decode->clienteId;
+$data = $json_decode->data;
+$crianca = $json_decode->crianca;
 
 $orcamentoDAO = new OrcamentoDAO();
 
-$orcamento = new Orcamento(null, 1, "lula", "2018-11-28");
-$orcamentoDAO->cadastrar($orcamento);
+$orcamento = new Orcamento(null, $cliente_id, $crianca, $data);
+$id_orcamento = $orcamentoDAO->cadastrar($orcamento);
+echo $id_orcamento;

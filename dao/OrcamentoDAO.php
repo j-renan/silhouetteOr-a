@@ -17,7 +17,10 @@ class OrcamentoDAO
         $sql = "INSERT INTO orcamento (data, cliente_id, crianca) 
           VALUES ('".$orcamento->getData()."', '".$orcamento->getClienteId()."', '".$orcamento->getCrianca()."')";
 
+
         $bd->query($sql);
+        $id = $bd->insert_id;
         $bd->close();
+        return $id;
     }
 }
