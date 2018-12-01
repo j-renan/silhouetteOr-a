@@ -3,6 +3,8 @@ let listaMateriais = []
 const precoInput = document.getElementById("preco");
 let indice = 1
 let valorUnitarioTotal = 0
+const listaMateriaisAdicionados = []
+const btnEnviarOrcamento = document.getElementById("btnEnviarOrcamento")
 
 //qdo envia para orçamento culcula total dos produtos ativos
 document.getElementById("btnEnviarOrcamento").addEventListener('click',function () {
@@ -23,10 +25,6 @@ function setListaMateriais(lista) {
     precoInput.value = listaMateriais[0].preco
 }
 
-
-const listaMateriaisAdicionados = []
-const btnEnviarOrcamento = document.getElementById("btnEnviarOrcamento")
-
 function setarPreco() {
     const selectMaterial = document.getElementById("selectMaterial");
     const dados = selectMaterial.value.split("|")
@@ -35,14 +33,16 @@ function setarPreco() {
 
 function adicionarDados() {
     const selectProduto = document.getElementById("selectProduto").textContent;
+    const produtoId = document.getElementById("selectProduto").value
     const selectMaterial = document.getElementById("selectMaterial").value;
     const preco = document.getElementById("preco").value;
     const nomeMaterial = selectMaterial.split("|")[0]
+    const materialId = selectMaterial.split("|")[2]
 
-    criarLinha(selectProduto, nomeMaterial, preco)
+    criarLinha(selectProduto, nomeMaterial, preco, materialId, produtoId)
 }
 
-function criarLinha(produto, material, preco) {
+function criarLinha(produto, material, preco, materialId, produtoId) {
 
     const corpo = document.getElementById("corpo")
     const linha = document.createElement("tr")
@@ -74,7 +74,9 @@ function criarLinha(produto, material, preco) {
     // monta o obj que será salvo no banco de dados
     const obj = {
         produto: produto,
+        produtoId: produtoId,
         material: material,
+        materialId: materialId,
         preco: parseFloat(preco),
         ativo: true
     }

@@ -1,8 +1,7 @@
 function salvarDados() {
     salvarOrcamento()
-
-
 }
+
 // salvar dados na tabela orcamento
 function salvarOrcamento() {
     const data= document.getElementById("data").value
@@ -27,9 +26,6 @@ function salvarOrcamento() {
     }).catch(erro => {
         console.log(erro)
     })
-
-
-    //enviar para salvar
 }
 
 function salvarProdutoOrcamento(id){
@@ -52,12 +48,31 @@ function salvarProdutoOrcamento(id){
         },
         method: "POST",
         body: JSON.stringify(dados)
-    }).then(resposta => {
-        resposta.json().then(id=>console.log(id))
-    }).catch(erro => {
-        console.log(erro)
+    }).then(() => salvarMaterialOrcamento()
+    ).catch(erro => console.log(erro))
+
+}
+
+function salvarMaterialOrcamento() {
+    let listaMateriaisSalvar = []
+
+    listaMateriaisAdicionados.map(material => {
+        if (material.ativo == true) {
+            listaMateriaisSalvar.push(material)
+        }
     })
 
+    const  url = "../controller/materialOrcamento-ctrl.php"
+
+    fetch(url, {
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        method: "POST",
+        body: JSON.stringify(listaMateriaisSalvar)
+    }).then(() => console.log('salvou tudo...')
+    ).catch(erro => console.log(erro))
 }
 
 
