@@ -32,14 +32,15 @@ function setarPreco() {
 }
 
 function adicionarDados() {
-    const selectProduto = document.getElementById("selectProduto").textContent;
+    const selectProduto = document.getElementById("selectProduto");
+    const produtoNome = selectProduto.options[selectProduto.selectedIndex].textContent
     const produtoId = document.getElementById("selectProduto").value
     const selectMaterial = document.getElementById("selectMaterial").value;
     const preco = document.getElementById("preco").value;
     const nomeMaterial = selectMaterial.split("|")[0]
     const materialId = selectMaterial.split("|")[2]
 
-    criarLinha(selectProduto, nomeMaterial, preco, materialId, produtoId)
+    criarLinha(produtoNome, nomeMaterial, preco, materialId, produtoId)
 }
 
 function criarLinha(produto, material, preco, materialId, produtoId) {
