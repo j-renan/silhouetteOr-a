@@ -40,37 +40,11 @@ function adicionarDados() {
     const nomeMaterial = selectMaterial.split("|")[0]
     const materialId = selectMaterial.split("|")[2]
 
-    criarLinha(produtoNome, nomeMaterial, preco, materialId, produtoId)
+    verificarProdutoTabela(produtoNome, nomeMaterial, preco, materialId, produtoId)
+    //criarLinha(produtoNome, nomeMaterial, preco, materialId, produtoId)
 }
 
-function criarLinha(produto, material, preco, materialId, produtoId) {
-
-    const corpo = document.getElementById("corpo")
-    const linha = document.createElement("tr")
-
-    const colProduto = document.createElement("td")
-    const colMaterial = document.createElement("td")
-    const colPreco = document.createElement("td")
-    const colApagar = document.createElement("td")
-
-    const pro = document.createTextNode(produto)
-    const mat = document.createTextNode(material)
-    const pre = document.createTextNode(preco)
-    const botaoRemover = criarBotao(indice)
-
-    colProduto.appendChild(pro)
-    colMaterial.appendChild(mat)
-    colPreco.appendChild(pre)
-    colApagar.appendChild(botaoRemover)
-
-
-    linha.appendChild(colProduto)
-    linha.appendChild(colMaterial)
-    linha.appendChild(colPreco)
-    linha.appendChild(colApagar)
-
-    corpo.appendChild(linha)
-    indice++
+function verificarProdutoTabela(produto, material, preco, materialId, produtoId) {
 
     // monta o obj que será salvo no banco de dados
     const obj = {
@@ -82,19 +56,59 @@ function criarLinha(produto, material, preco, materialId, produtoId) {
         ativo: true
     }
 
-    listaMateriaisAdicionados.push(obj)
+    if (listaMateriaisAdicionados.length === 0){
+        listaMateriaisAdicionados.push(obj)
+    } else {
+        const resultado = listaMateriaisAdicionados.find(p => p.produto === produto)
 
-    if (listaMateriaisAdicionados.length > 0) {
-        btnEnviarOrcamento.style.display = 'inline-block'
+        if (resultado == undefined) {
+            // adicionar em uma nova linha
+            listaMateriaisAdicionados.push(obj)
+        } else {
+            // juntar na mesma linha
+            resultado.material += " , " + material
+            resultado.preco = parseFloat(resultado.preco) + parseFloat(preco)
+        }
     }
 
-    let totalValorUnitarioProduto = 0
-    for(let i=0; i < listaMateriaisAdicionados.length; i++) {
-        const linha = listaMateriaisAdicionados[i]
-            totalValorUnitarioProduto = totalValorUnitarioProduto + linha.preco
+    // limpa as linhas da tabela
+    listaMateriaisAdicionados.map((item,i) => document.getElementById("tabela").deleteRow(i))
 
-        //totalValorUnitarioProduto += linha.preco
-    }
+    criarLinha()
+
+}
+
+function criarLinha() {
+
+    const corpo = document.getElementById("corpo")
+    const linha = document.createElement("tr")
+
+    const colProduto = document.createElement("td")
+    const colMaterial = document.createElement("td")
+    const colPreco = document.createElement("td")
+    const colApagar = document.createElement("td")
+
+    listaMateriaisAdicionados.map(p=>{
+        const pro = document.createTextNode(p.produto)
+        const mat = document.createTextNode(p.material)
+        const pre = document.createTextNode(p.preco)
+        const botaoRemover = criarBotao(indice)
+
+        colProduto.appendChild(pro)
+        colMaterial.appendChild(mat)
+        colPreco.appendChild(pre)
+        colApagar.appendChild(botaoRemover)
+
+
+        linha.appendChild(colProduto)
+        linha.appendChild(colMaterial)
+        linha.appendChild(colPreco)
+        linha.appendChild(colApagar)
+
+        corpo.appendChild(linha)
+        indice++
+
+    })
 
 
 
