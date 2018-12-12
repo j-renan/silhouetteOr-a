@@ -1,7 +1,6 @@
 
 let listaMateriais = []
 const precoInput = document.getElementById("preco");
-let indice = 1
 let valorUnitarioTotal = 0
 const listaMateriaisAdicionados = []
 const btnEnviarOrcamento = document.getElementById("btnEnviarOrcamento")
@@ -94,7 +93,7 @@ function criarLinha() {
 
     const corpo = document.getElementById("corpo")
 
-    listaMateriaisAdicionados.map(p=>{
+    listaMateriaisAdicionados.map((p, indice) =>{
         const linha = document.createElement("tr")
 
         const colProduto = document.createElement("td")
@@ -115,7 +114,7 @@ function criarLinha() {
         const mat = document.createTextNode(p.material)
         const pre = document.createTextNode(p.preco)
 
-        const botaoRemover = criarBotao(indice)
+        const botaoRemover = criarBotao(indice + 1)
 
         colProduto.appendChild(pro)
         colMaterial.appendChild(mat)
@@ -131,8 +130,6 @@ function criarLinha() {
         linha.appendChild(colApagar)
 
         corpo.appendChild(linha)
-        indice++
-
     })
 
    // const spanProduto=document.getElementById("produto")
@@ -149,7 +146,7 @@ function criarBotao(indice) {
     botao.onclick = function () {
         const linhaRemover = document.getElementsByTagName("tr")[indice]
         linhaRemover.style.display = "none"
-        removerItemArray(indice)
+        removerItemArray(indice - 1)
     }
     botao.appendChild(textoBotao)
     return botao
@@ -170,21 +167,14 @@ function calcular() {
 
 function removerItemArray(indice) {
 
-    let produtoAtivo = false
-    for (let i = 0; i < listaMateriaisAdicionados.length; i++){
-        const linha = listaMateriaisAdicionados[i]
-        if ((indice - 1) === i){
-            linha.ativo = false
-        }
-        if (linha.ativo === true){
-            produtoAtivo = true
-        }
-    }
+    listaMateriaisAdicionados.splice(indice, 1)
 
-    if (produtoAtivo === true) {
+    //exibindo botao enviar para orcamento
+    if (listaMateriaisAdicionados.length > 0) {
         btnEnviarOrcamento.style.display = 'inline-block'
     }else {
         btnEnviarOrcamento.style.display = 'none'
     }
+  
 
 }
