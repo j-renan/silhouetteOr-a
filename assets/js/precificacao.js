@@ -78,14 +78,8 @@ function verificarProdutoTabela(produto, material, preco, materialId, produtoId)
         if (i > 0){
             document.getElementById('tabela').deleteRow(i);
         }
-
     }
-
-
-
-
     criarLinha()
-
 }
 
 function criarLinha() {
@@ -98,31 +92,35 @@ function criarLinha() {
         const colProduto = document.createElement("td")
         const colMaterial = document.createElement("td")
         const colPreco = document.createElement("td")
+        const colInput = document.createElement("td")
         const colApagar = document.createElement("td")
+
+        const input = document.createElement("input")
+        input.type = "number"
 
         const pro = document.createTextNode(p.produto)
         const mat = document.createTextNode(p.material)
         const pre = document.createTextNode(p.preco)
+
         const botaoRemover = criarBotao(indice)
 
         colProduto.appendChild(pro)
         colMaterial.appendChild(mat)
         colPreco.appendChild(pre)
+        colInput.appendChild(input)
         colApagar.appendChild(botaoRemover)
 
 
         linha.appendChild(colProduto)
         linha.appendChild(colMaterial)
         linha.appendChild(colPreco)
+        linha.appendChild(colInput)
         linha.appendChild(colApagar)
 
         corpo.appendChild(linha)
         indice++
 
     })
-
-
-
 
     const spanProduto=document.getElementById("produto")
     spanProduto.textContent = produto

@@ -169,7 +169,9 @@ include "../controller/buscarDadosPrecificacao.php";
                     <td>PRODUTO</td>
                     <td>MATERIAL</td>
                     <td>PREÇO UNITÁRIO</td>
+                    <td>QTDE</td>
                     <td>EXCLUIR</td>
+
                 </tr>
                 </thead>
                 <tbody id="corpo">
