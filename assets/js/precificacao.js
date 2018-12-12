@@ -72,7 +72,17 @@ function verificarProdutoTabela(produto, material, preco, materialId, produtoId)
     }
 
     // limpa as linhas da tabela
-    listaMateriaisAdicionados.map((item,i) => document.getElementById("tabela").deleteRow(i))
+    const linhas = document.getElementById('tabela').rows.length;
+    console.log(linhas)
+    for (let i= linhas-1; i > 0; i--){
+        if (i > 0){
+            document.getElementById('tabela').deleteRow(i);
+        }
+
+    }
+
+
+
 
     criarLinha()
 
@@ -81,14 +91,15 @@ function verificarProdutoTabela(produto, material, preco, materialId, produtoId)
 function criarLinha() {
 
     const corpo = document.getElementById("corpo")
-    const linha = document.createElement("tr")
-
-    const colProduto = document.createElement("td")
-    const colMaterial = document.createElement("td")
-    const colPreco = document.createElement("td")
-    const colApagar = document.createElement("td")
 
     listaMateriaisAdicionados.map(p=>{
+        const linha = document.createElement("tr")
+
+        const colProduto = document.createElement("td")
+        const colMaterial = document.createElement("td")
+        const colPreco = document.createElement("td")
+        const colApagar = document.createElement("td")
+
         const pro = document.createTextNode(p.produto)
         const mat = document.createTextNode(p.material)
         const pre = document.createTextNode(p.preco)
