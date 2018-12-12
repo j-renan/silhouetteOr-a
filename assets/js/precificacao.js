@@ -15,9 +15,9 @@ document.getElementById("btnEnviarOrcamento").addEventListener('click',function 
             valorUnitarioTotal = valorUnitarioTotal + linha.preco
         }
     })
-    const spanTotal=document.getElementById("total")
-    spanTotal.textContent = parseFloat(valorUnitarioTotal).toFixed(2)
-
+    //const spanTotal=document.getElementById("total")
+    //spanTotal.textContent = parseFloat(valorUnitarioTotal).toFixed(2)
+console.log(listaMateriaisAdicionados)
 })
 
 function setListaMateriais(lista) {
@@ -41,8 +41,8 @@ function adicionarDados() {
     const materialId = selectMaterial.split("|")[2]
 
     verificarProdutoTabela(produtoNome, nomeMaterial, preco, materialId, produtoId)
-    //criarLinha(produtoNome, nomeMaterial, preco, materialId, produtoId)
-}
+
+    }
 
 function verificarProdutoTabela(produto, material, preco, materialId, produtoId) {
 
@@ -53,7 +53,9 @@ function verificarProdutoTabela(produto, material, preco, materialId, produtoId)
         material: material,
         materialId: materialId,
         preco: parseFloat(preco),
-        ativo: true
+        ativo: true,
+        qtde: ""
+
     }
 
     if (listaMateriaisAdicionados.length === 0){
@@ -71,9 +73,15 @@ function verificarProdutoTabela(produto, material, preco, materialId, produtoId)
         }
     }
 
+    //exibindo botao enviar para orcamento
+    if (listaMateriaisAdicionados.length > 0) {
+        btnEnviarOrcamento.style.display = 'inline-block'
+    }else {
+        btnEnviarOrcamento.style.display = 'none'
+    }
+
     // limpa as linhas da tabela
     const linhas = document.getElementById('tabela').rows.length;
-    console.log(linhas)
     for (let i= linhas-1; i > 0; i--){
         if (i > 0){
             document.getElementById('tabela').deleteRow(i);
@@ -97,6 +105,11 @@ function criarLinha() {
 
         const input = document.createElement("input")
         input.type = "number"
+        input.value = p.qtde
+        input.onkeyup = function() {
+            const qtde = this.value
+            p.qtde = qtde
+        }
 
         const pro = document.createTextNode(p.produto)
         const mat = document.createTextNode(p.material)
@@ -122,8 +135,8 @@ function criarLinha() {
 
     })
 
-    const spanProduto=document.getElementById("produto")
-    spanProduto.textContent = produto
+   // const spanProduto=document.getElementById("produto")
+    // spanProduto.textContent = produto
 }
 
 function criarBotao(indice) {
