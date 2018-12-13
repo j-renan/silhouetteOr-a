@@ -119,18 +119,12 @@ include "../controller/buscarDadosPrecificacao.php";
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
-                                <h4>Total da Unidade do Produto <span id="produto"></span> = R$ <span id="total"></span></h4>
+                                <h4>Valor Total dos Produtos <span id="produto"></span> = R$ <span id="total"></span></h4>
                             </div>
                         </div>
                         <br/>
 
                         <div class="row">
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label>Quantidade</label>
-                                    <input type="number" id="qtde" name="qtde" min="1" value="1" class="form-control">
-                                </div>
-                            </div>
                             <div class="col-md-2">
                                 <div class="form-group">
                                     <label>% Lucro</label>

@@ -10,13 +10,12 @@ document.getElementById("btnEnviarOrcamento").addEventListener('click',function 
 
     valorUnitarioTotal = 0
     listaMateriaisAdicionados.map(function (linha) {
-        if (linha.ativo === true){
-            valorUnitarioTotal = valorUnitarioTotal + linha.preco
-        }
+        const valorTotalProduto = linha.preco * linha.qtde
+            valorUnitarioTotal = valorUnitarioTotal + valorTotalProduto
     })
-    //const spanTotal=document.getElementById("total")
-    //spanTotal.textContent = parseFloat(valorUnitarioTotal).toFixed(2)
-console.log(listaMateriaisAdicionados)
+    const spanTotal=document.getElementById("total")
+    spanTotal.textContent = parseFloat(valorUnitarioTotal).toFixed(2)
+
 })
 
 function setListaMateriais(lista) {
@@ -154,15 +153,9 @@ function criarBotao(indice) {
 }
 
 function calcular() {
-    const qtde = document.getElementById("qtde").value
     const lucro = document.getElementById("lucro").value
-    const total = (Number(qtde) * valorUnitarioTotal)
-    let porcentagem = total * (lucro/100)
-
-    porcentagem = porcentagem + total
-
+    let porcentagem = (valorUnitarioTotal * (lucro/100)) + valorUnitarioTotal
     document.getElementById("totalQtde").value = parseFloat(porcentagem).toFixed(2)
-
 }
 
 function removerItemArray(indice) {
@@ -175,6 +168,6 @@ function removerItemArray(indice) {
     }else {
         btnEnviarOrcamento.style.display = 'none'
     }
-  
+
 
 }
