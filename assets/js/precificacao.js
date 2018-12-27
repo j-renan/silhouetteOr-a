@@ -49,23 +49,42 @@ function verificarProdutoTabela(produto, material, preco, materialId, produtoId)
         produto: produto,
         produtoId: produtoId,
         material: material,
-        materialId: materialId,
+        materiais: [],
         preco: parseFloat(preco),
         ativo: true,
-        qtde: ""
-
+        qtde: "",
+        orcamentoId: "",
+        percentual: "",
+        total: ""
+    }
+    const materialObj = {
+        produtoId: "",
+        materialId: "",
+        precoUnitario: ""
     }
 
     if (listaMateriaisAdicionados.length === 0){
+        materialObj.produtoId = produtoId
+        materialObj.precoUnitario = preco
+        materialObj.materialId = materialId
+        obj.materiais.push(materialObj)
         listaMateriaisAdicionados.push(obj)
     } else {
         const resultado = listaMateriaisAdicionados.find(p => p.produto === produto)
 
         if (resultado == undefined) {
             // adicionar em uma nova linha
+            materialObj.produtoId = produtoId
+            materialObj.precoUnitario = preco
+            materialObj.materialId = materialId
+            obj.materiais.push(materialObj)
             listaMateriaisAdicionados.push(obj)
         } else {
             // juntar na mesma linha
+            materialObj.produtoId = produtoId
+            materialObj.precoUnitario = preco
+            materialObj.materialId = materialId
+            resultado.materiais.push(materialObj)
             resultado.material += " , " + material
             resultado.preco = parseFloat(resultado.preco) + parseFloat(preco)
         }
@@ -85,6 +104,7 @@ function verificarProdutoTabela(produto, material, preco, materialId, produtoId)
             document.getElementById('tabela').deleteRow(i);
         }
     }
+
     criarLinha()
 }
 
@@ -131,8 +151,6 @@ function criarLinha() {
         corpo.appendChild(linha)
     })
 
-   // const spanProduto=document.getElementById("produto")
-    // spanProduto.textContent = produto
 }
 
 function criarBotao(indice) {

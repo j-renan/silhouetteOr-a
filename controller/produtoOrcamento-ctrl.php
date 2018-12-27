@@ -14,15 +14,19 @@ $json_decode = json_decode($dados);
 
 //variaveis do orcamento para salvar
 
-$produto_id = $json_decode->produtoId;
-$precoUnitario = $json_decode->precoUnitario;
-$qtde = $json_decode->qtde;
-$percentual = $json_decode->percentual;
-$total = $json_decode->total;
-$orcamentoId = $json_decode->orcamentoId;
+for ($i=0; $i<count($json_decode); $i++) {
+    $linha = $json_decode[$i];
 
-$produtoOrcamentoDAO = new ProdutoOrcamentoDAO();
+    $produto_id = $linha->produtoId;
+    $precoUnitario = $linha->preco;
+    $qtde = $linha->qtde;
+    $percentual = $linha->percentual;
+    $total = $linha->total;
+    $orcamentoId = $linha->orcamentoId;
 
-$produtoOrcamento = new ProdutoOrcamento(null,$produto_id,$precoUnitario,$qtde,$percentual,$total,$orcamentoId);
-$produtoOrcamentoDAO->cadastrar($produtoOrcamento);
+    $produtoOrcamentoDAO = new ProdutoOrcamentoDAO();
 
+    $produtoOrcamento = new ProdutoOrcamento(null,$produto_id,$precoUnitario,$qtde,$percentual,$total,$orcamentoId);
+    $produtoOrcamentoDAO->cadastrar($produtoOrcamento);
+
+}

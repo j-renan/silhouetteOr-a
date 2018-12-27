@@ -29,17 +29,17 @@ function salvarOrcamento() {
 }
 
 function salvarProdutoOrcamento(id){
-    const produtoId= document.getElementById("selectProduto").value
-    const precoUnitario= document.getElementById("preco").value
-    const qtde= document.getElementById("qtde").value
-    const percentual= document.getElementById("lucro").value
+
     const total= document.getElementById("totalQtde").value
+    const percentual= document.getElementById("lucro").value
+
+    listaMateriaisAdicionados.map(item => {
+        item.orcamentoId = id
+        item.total = total
+        item.percentual = percentual
+    })
 
     const  url = "../controller/produtoOrcamento-ctrl.php"
-    const dados = {
-        produtoId, precoUnitario, qtde, percentual, total,
-        orcamentoId: id
-    }
 
     fetch(url, {
         headers: {
@@ -47,7 +47,7 @@ function salvarProdutoOrcamento(id){
             'Content-Type': 'application/json'
         },
         method: "POST",
-        body: JSON.stringify(dados)
+        body: JSON.stringify(listaMateriaisAdicionados)
     }).then(() => salvarMaterialOrcamento()
     ).catch(erro => console.log(erro))
 
@@ -56,12 +56,12 @@ function salvarProdutoOrcamento(id){
 function salvarMaterialOrcamento() {
     let listaMateriaisSalvar = []
 
-    listaMateriaisAdicionados.map(material => {
-        if (material.ativo == true) {
+    listaMateriaisAdicionados.map(item => {
+        item.materiais.map(material => {
             listaMateriaisSalvar.push(material)
-        }
+        })
     })
-
+    console.log(listaMateriaisSalvar)
     const  url = "../controller/materialOrcamento-ctrl.php"
 
     fetch(url, {
@@ -71,7 +71,7 @@ function salvarMaterialOrcamento() {
         },
         method: "POST",
         body: JSON.stringify(listaMateriaisSalvar)
-    }).then(() => console.log('salvou tudo...')
+    }).then(() => location.reload()
     ).catch(erro => console.log(erro))
 }
 

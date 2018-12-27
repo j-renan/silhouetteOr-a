@@ -18,7 +18,7 @@ for ($i=0; $i<count($json_decode);$i++){
     $linha = $json_decode[$i];
     $produto_id = $linha->produtoId;
     $material_id = $linha->materialId;
-    $preco_unitario = $linha->preco;
+    $preco_unitario = $linha->precoUnitario;
 
     $materialOrcamento = new MaterialOrcamento(null,$produto_id,$material_id,$preco_unitario);
     $materialOcamentoDao = new MaterialOrcamentoDAO();
