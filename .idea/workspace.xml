@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94b35422-2367-4b6a-a18a-1b81cf1201d9" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/precificacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/precificacao.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/salvarPrecificacao.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/salvarPrecificacao.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/materialOrcamento-ctrl.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/materialOrcamento-ctrl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/produtoOrcamento-ctrl.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller/produtoOrcamento-ctrl.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,13 +46,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="4778" />
+          <entry key="js" value="4853" />
           <entry key="php" value="7370" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="4778" />
+          <entry key="JavaScript" value="4853" />
           <entry key="PHP" value="7364" />
           <entry key="SQL" value="6" />
         </counts>
@@ -82,8 +78,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/salvarPrecificacao.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-138">
-              <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
+            <state relative-caret-position="312">
+              <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -160,8 +156,8 @@
         <option value="$PROJECT_DIR$/views/precificacao.php" />
         <option value="$PROJECT_DIR$/controller/produtoOrcamento-ctrl.php" />
         <option value="$PROJECT_DIR$/assets/js/precificacao.js" />
-        <option value="$PROJECT_DIR$/assets/js/salvarPrecificacao.js" />
         <option value="$PROJECT_DIR$/controller/materialOrcamento-ctrl.php" />
+        <option value="$PROJECT_DIR$/assets/js/salvarPrecificacao.js" />
       </list>
     </option>
   </component>
@@ -270,12 +266,12 @@
       <workItem from="1543680499990" duration="10423000" />
       <workItem from="1544479631300" duration="6980000" />
       <workItem from="1544652208382" duration="7578000" />
-      <workItem from="1545948635610" duration="5247000" />
+      <workItem from="1545948635610" duration="5880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65670000" />
+    <option name="totallyTimeSpent" value="66303000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -472,8 +468,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/salvarPrecificacao.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-138">
-          <caret line="63" column="36" selection-start-line="63" selection-start-column="36" selection-end-line="63" selection-end-column="36" />
+        <state relative-caret-position="312">
+          <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
         </state>
       </provider>
     </entry>

@@ -75,12 +75,14 @@ function salvarMaterialOrcamento() {
     ).catch(erro => console.log(erro))
 }
 
+/*
+gerar consulta para pagina orçamentos
+popular tabela com os dados
+gerar relatorio para cliente
+gerar relatorio para vendedor
+
+ */
 
 
 
 
-
-
-// salvar dados na tabela produtos orçamento
-
-// salvar dados na tabela material orçamento
