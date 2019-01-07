@@ -47,7 +47,12 @@ include '../controller/orcamento-lista.php';
                           <td> ". $linha["crianca"] ." </td>
                           <td> ". $linha["produto"] ." </td>
                           <td> ". $linha["total"] ." </td>
-                          <td></td>
+                          
+                          <td width=\"100px\">
+					<button class=\"btn btn-success\" onclick=\"relatorio(".$linha['id'].")\">
+						<span class=\"glyphicon glyphicon-save-file\"></span>
+					</button>
+				  </td>
                         </tr>";
                     }
                 ?>
@@ -59,6 +64,13 @@ include '../controller/orcamento-lista.php';
         <!--incluindo arquivos necessarios para a biblioteca-->
         <script src="../assets/js/jquery.min.js"></script>
         <script src="../assets/js/bootstrap.min.js"></script>
+        <script>
+            function relatorio(id) {
+                console.log(id)
+
+            }
+
+        </script>
 
 </body>
 </html>

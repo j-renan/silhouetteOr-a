@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="94b35422-2367-4b6a-a18a-1b81cf1201d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controller/orcamento-lista.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dao/OrcamentoDAO.php" beforeDir="false" afterPath="$PROJECT_DIR$/dao/OrcamentoDAO.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/orcamento.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/orcamento.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,26 +36,26 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="js" value="4" />
-          <entry key="php" value="58" />
+          <entry key="php" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JavaScript" value="4" />
-          <entry key="PHP" value="58" />
+          <entry key="PHP" value="59" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="4956" />
-          <entry key="php" value="8477" />
+          <entry key="php" value="8507" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="5" />
           <entry key="JavaScript" value="4956" />
-          <entry key="PHP" value="8443" />
+          <entry key="PHP" value="8472" />
           <entry key="SQL" value="30" />
         </counts>
       </usages-collector>
@@ -73,14 +70,27 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/produto-tabela.php">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="42" column="23" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="42" selection-end-column="23" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/orcamento.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
-              <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+              <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dao/OrcamentoDAO.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="31" column="86" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="86" />
             </state>
           </provider>
         </entry>
@@ -94,11 +104,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/orcamento-lista.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+            <state relative-caret-position="298">
+              <caret line="35" column="22" lean-forward="true" selection-start-line="34" selection-start-column="84" selection-end-line="35" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -148,9 +158,9 @@
         <option value="$PROJECT_DIR$/assets/js/precificacao.js" />
         <option value="$PROJECT_DIR$/controller/materialOrcamento-ctrl.php" />
         <option value="$PROJECT_DIR$/assets/js/salvarPrecificacao.js" />
+        <option value="$PROJECT_DIR$/controller/orcamento-lista.php" />
         <option value="$PROJECT_DIR$/dao/OrcamentoDAO.php" />
         <option value="$PROJECT_DIR$/views/orcamento.php" />
-        <option value="$PROJECT_DIR$/controller/orcamento-lista.php" />
       </list>
     </option>
   </component>
@@ -265,12 +275,12 @@
       <workItem from="1544479631300" duration="6980000" />
       <workItem from="1544652208382" duration="7578000" />
       <workItem from="1545948635610" duration="6572000" />
-      <workItem from="1546898812488" duration="5562000" />
+      <workItem from="1546898812488" duration="6336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="72557000" />
+    <option name="totallyTimeSpent" value="73331000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -444,16 +454,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dao/OrcamentoDAO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="41" column="1" lean-forward="true" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/produto-tabela.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/produto-lista.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -471,17 +471,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/orcamento.php">
+    <entry file="file://$PROJECT_DIR$/controller/orcamento-lista.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
+        <state relative-caret-position="298">
+          <caret line="35" column="22" lean-forward="true" selection-start-line="34" selection-start-column="84" selection-end-line="35" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/orcamento-lista.php">
+    <entry file="file://$PROJECT_DIR$/dao/OrcamentoDAO.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+        <state relative-caret-position="171">
+          <caret line="31" column="86" selection-start-line="31" selection-start-column="86" selection-end-line="31" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/produto-tabela.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="42" column="23" lean-forward="true" selection-start-line="38" selection-start-column="18" selection-end-line="42" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/orcamento.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
         </state>
       </provider>
     </entry>
