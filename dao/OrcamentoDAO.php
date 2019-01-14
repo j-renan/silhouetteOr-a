@@ -39,4 +39,26 @@ class OrcamentoDAO
         $bd->close();
         return $resultados;
     }
+
+    /**
+     * Busca os dados para o orçamento pelo seu id
+     * @param $idOrcamento
+     * @return bool|mysqli_result
+     */
+    public function buscarDadosOrcamentoRelatorio($idOrcamento)
+    {
+        $conexao = new Conexao();
+        $bd = $conexao->conectar();
+
+        $sql = "SELECT o.id, c.nome, o.crianca, DATE_FORMAT(o.data,'%d/%m/%Y') AS data, p.produto, po.total,
+            po.preco_unitario, po.qtde FROM orcamento AS o 
+            INNER JOIN produto_orcamento AS po ON po.orcamento_id = o.id
+            INNER JOIN clientes AS c ON c.id = o.cliente_id
+            INNER JOIN produtos AS p ON p.id = po.produto_id 
+            WHERE o.id = '".$idOrcamento."'";
+
+        $resultados = $bd->query($sql);
+        $bd->close();
+        return $resultados;
+    }
 }

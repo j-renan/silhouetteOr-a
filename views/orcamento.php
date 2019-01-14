@@ -26,6 +26,7 @@ include '../controller/orcamento-lista.php';
                 <!-- cabecalho da tabela -->
                 <thead>
                 <tr>
+                    <th>Id</th>
                     <th>Data</th>
                     <th>Cliente</th>
                     <th>Criança</th>
@@ -42,6 +43,7 @@ include '../controller/orcamento-lista.php';
                         $linha = $listaOrcamentos[$i];
 
                         echo "<tr>
+                            <td> ". $linha["id"] ." </td>
                           <td> ". $linha["data"] ." </td>
                           <td> ". $linha["nome"] ." </td>
                           <td> ". $linha["crianca"] ." </td>
@@ -67,6 +69,7 @@ include '../controller/orcamento-lista.php';
         <script>
             function relatorio(id) {
                 console.log(id)
+                window.open("http://localhost/projeto-silhouette-orca/controller/relatorio-ctrl.php", "_blank")
 
             }
 
